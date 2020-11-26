@@ -13,6 +13,9 @@ public class MainActivity extends AppCompatActivity
 {
     private TakeCareView gameView;
 
+    private Handler handler = new Handler();
+    private final static long Interval = 30;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState)
     {
@@ -20,5 +23,22 @@ public class MainActivity extends AppCompatActivity
 
         gameView = new TakeCareView(this);
         setContentView(gameView);
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask()
+        {
+            @Override
+            public void run()
+            {
+                handler.post(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        gameView.invalidate();
+                    }
+                });
+            }
+        }, 0, Interval);
     }
 }

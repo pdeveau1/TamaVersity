@@ -12,8 +12,15 @@ public class TakeCare
     private float health;
     private float social;
 
-    private String currentState = "Fine";
+    private String currentState;
 
+    public TakeCare()
+    {
+        academics = MAX_VAL;
+        health = MAX_VAL;
+        social = MAX_VAL;
+        currentState = "fine";
+    }
     //drop book to engineer it studies
     public void study()
     {
