@@ -14,7 +14,6 @@ import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
-
 public class TakeCareView extends View
 {
     GestureDetector gestureDetector;
