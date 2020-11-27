@@ -5,7 +5,7 @@ public class TakeCare
     //minimum one of the states can be
     private static int MIN_VAL = 0;
     //maximum one of the states can be
-    private static int MAX_VAL = 1000;
+    private static int MAX_VAL = 100;
 
     //sets all states initially to max the states can be
     private float academics;
@@ -28,15 +28,15 @@ public class TakeCare
         health -= 1;
         social -= 2;
 
-        if(academics > MAX_VAL)
+        if(academics >= MAX_VAL)
         {
             academics = MAX_VAL;
         }
-        if(health < MIN_VAL)
+        if(health <= MIN_VAL)
         {
             health = MIN_VAL;
         }
-        if(social < MIN_VAL)
+        if(social <= MIN_VAL)
         {
             social = MIN_VAL;
         }
@@ -46,7 +46,7 @@ public class TakeCare
     public void eat()
     {
         health += 3;
-        if(health > MAX_VAL)
+        if(health >= MAX_VAL)
         {
             health = MAX_VAL;
         }
@@ -59,15 +59,15 @@ public class TakeCare
         health += 1;
         academics -= 2;
 
-        if (social > MAX_VAL)
+        if (social >= MAX_VAL)
         {
             social = MAX_VAL;
         }
-        if(health < MIN_VAL)
+        if(health >= MAX_VAL)
         {
-            health = MIN_VAL;
+            health = MAX_VAL;
         }
-        if(academics < MIN_VAL)
+        if(academics <= MIN_VAL)
         {
             academics = MIN_VAL;
         }
@@ -112,4 +112,13 @@ public class TakeCare
         return social;
     }
 
+    public float getMax()
+    {
+        return MAX_VAL;
+    }
+
+    public float getMin()
+    {
+        return MIN_VAL;
+    }
 }

@@ -4,7 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -49,16 +51,25 @@ public class TakeCareView extends View
     {
         super.onDraw(canvas);
 
+        Paint paint = new Paint();
+        paint.setColor(Color.BLACK);
+        //paint.style = Paint.Style.FILL;
+        paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        paint.setTextSize(50);
+
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
 
-        backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth,
-                canvasHeight, true);
+        backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth, canvasHeight, true);
         canvas.drawBitmap(backgroundImage, 0, 0, null);
 
-        canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic(),0, null);
-        canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth(),70, null);
-        canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial(),140, null);
+        canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
+        canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
+        canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
+
+        canvas.drawText(String.valueOf((int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*10, academic_view.getHeight()/2, paint);
+        canvas.drawText(String.valueOf((int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*10, health_view.getHeight()/2 + 70, paint);
+        canvas.drawText(String.valueOf((int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*10, social_view.getHeight()/2 + 140, paint);
     }
 
    /* @Override
@@ -86,16 +97,16 @@ public class TakeCareView extends View
         {
             return true;
         }
-        //event when single tap occurs
+        //event when single tap occurs, engineers studies
         @Override
-        public boolean onSingleTapUp(MotionEvent e)
+        public boolean onSingleTapConfirmed(MotionEvent e)
         {
             engineer.study();
             return true;
         }
-        // event when double tap occurs
+        // event when double tap occurs, engineer socializes
         @Override
-        public boolean onDoubleTap(MotionEvent e)
+        public boolean onDoubleTapEvent(MotionEvent e)
         {
             engineer.socialize();
             return true;
