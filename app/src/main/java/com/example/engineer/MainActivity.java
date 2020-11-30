@@ -11,6 +11,8 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
 {
+
+
     private TakeCareView gameView;
 
     private Handler handler = new Handler();
