@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -15,7 +16,7 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity
 {
 
-
+    Button button;
     private TakeCareView gameView;
     private TakeCare engineer = new TakeCare();
 
@@ -63,6 +64,6 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 finish();
             }
-        })
+        });
     }
 }
