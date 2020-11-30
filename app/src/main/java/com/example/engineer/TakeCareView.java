@@ -27,6 +27,8 @@ public class TakeCareView extends View
     private Bitmap health_view;
     private Bitmap social_view;
 
+    private Bitmap player;
+
     private Bitmap backgroundImage;
 
     private TakeCare engineer = new TakeCare();
@@ -41,6 +43,8 @@ public class TakeCareView extends View
         academic_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         health_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         social_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
+
+        player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
 
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
     }
@@ -62,6 +66,9 @@ public class TakeCareView extends View
 
         backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth, canvasHeight, true);
         canvas.drawBitmap(backgroundImage, 0, 0, null);
+
+        player = Bitmap.createScaledBitmap(player,canvasWidth/3, canvasHeight/2, true);
+        canvas.drawBitmap(player, canvasWidth/3, canvasHeight/2, null);
 
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
