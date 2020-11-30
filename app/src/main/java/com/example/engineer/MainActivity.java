@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
                 });
             }
         }, 0, Interval);
-
+ /*
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
 }
 
