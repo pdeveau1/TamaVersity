@@ -14,6 +14,8 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
 {
+
+
     private TakeCareView gameView;
     private TakeCare engineer = new TakeCare();
 
