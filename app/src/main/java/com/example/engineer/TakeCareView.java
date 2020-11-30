@@ -61,6 +61,7 @@ public class TakeCareView extends View
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         paint.setTextSize(50);
 
+
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
 
