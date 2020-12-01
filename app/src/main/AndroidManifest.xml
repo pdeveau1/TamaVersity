@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engineer">
-        <activity android:name=".EndActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoadActivity"></activity>
+        <activity android:name=".EndActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".StartScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

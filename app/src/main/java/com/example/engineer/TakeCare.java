@@ -1,7 +1,10 @@
 package com.example.engineer;
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.io.*;
 
-public class TakeCare
+public class TakeCare implements Serializable
 {
     //minimum one of the states can be
     private static int MIN_VAL = 0;
@@ -27,6 +30,17 @@ public class TakeCare
         currentState = "fine";
         pointCheck = false;
     }
+
+    public TakeCare(float old_academics, float old_health, float old_social)
+    {
+        academics = old_academics;
+        health = old_health;
+        social = old_social;
+        totalpoints = 0;
+        currentState = "fine";
+        pointCheck = false;
+    }
+
     //drop book to engineer it studies
     public void study()
     {

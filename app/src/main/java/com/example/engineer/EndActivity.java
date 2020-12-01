@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class EndActivity extends AppCompatActivity
 {
-    private TakeCare engineer = new TakeCare();
+    private TakeCare engineer;
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,7 +18,7 @@ public class EndActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);
         button = (Button) findViewById(R.id.button);
-
+        TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override

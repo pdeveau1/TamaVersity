@@ -2,6 +2,7 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -34,23 +35,28 @@ public class TakeCareView extends View
 
     private Bitmap backgroundImage;
 
-    private TakeCare engineer = new TakeCare();
+    private TakeCare engineer;
 
 
-    public TakeCareView(Context context)
+    public TakeCareView(Context context, TakeCare new_engineer)
     {
         super(context);
+        engineer = new_engineer;
 
         gestureDetector = new GestureDetector(context, new GestureListener());
 
+        //creates bitmap for the status bars
         academic_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         health_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         social_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
 
+        //creates engineer bitmap
         player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
 
+        //creates bitmap for exit button
         x = BitmapFactory.decodeResource(getResources(),R.drawable.x);
 
+        //creates bitmap for background
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
     }
 
@@ -122,6 +128,7 @@ public class TakeCareView extends View
             if(mouse_x > canvasWidth - canvasWidth/10 && mouse_y > canvasHeight - canvasHeight/10)
             {
                 Intent endIntent = new Intent(getContext(), EndActivity.class);
+                endIntent.putExtra("Engineer", engineer);
                 endIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 getContext().startActivity(endIntent);
             }
