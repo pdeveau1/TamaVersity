@@ -11,20 +11,26 @@ public class TakeCare
     private float academics;
     private float health;
     private float social;
+    private float totalpoints;
+
+    private boolean pointCheck;
 
     private String currentState;
 
     public TakeCare()
     {
-        academics = MAX_VAL;
-        health = MAX_VAL;
-        social = MAX_VAL;
+        academics = 20;
+        health = 20;
+        social = 20;
+        totalpoints = 0;
         currentState = "fine";
+        pointCheck = false;
     }
     //drop book to engineer it studies
     public void study()
     {
         academics += 3;
+        totalpoints += 3;
         health -= 1;
         social -= 2;
 
@@ -46,6 +52,7 @@ public class TakeCare
     public void eat()
     {
         health += 3;
+        totalpoints += 3;
         if(health >= MAX_VAL)
         {
             health = MAX_VAL;
@@ -57,6 +64,7 @@ public class TakeCare
     {
         social += 2;
         health += 1;
+        totalpoints += 3;
         academics -= 2;
 
         if (social >= MAX_VAL)
@@ -97,9 +105,22 @@ public class TakeCare
         }
     }
 
+    public boolean checkPoints()
+    {
+        if (totalpoints >= 5)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
+        //System.out.println(totalpoints);
+
+    }
+
     public float getAcademic()
     {
-        return academics;
+            return academics;
     }
 
     public float getHealth()
@@ -111,6 +132,8 @@ public class TakeCare
     {
         return social;
     }
+
+    public String getCurrentState() { return currentState; }
 
     public float getMax()
     {

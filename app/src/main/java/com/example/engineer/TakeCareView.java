@@ -75,9 +75,12 @@ public class TakeCareView extends View
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
         canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
 
+
         canvas.drawText(String.valueOf((int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*10, academic_view.getHeight()/2, paint);
         canvas.drawText(String.valueOf((int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*10, health_view.getHeight()/2 + 70, paint);
         canvas.drawText(String.valueOf((int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*10, social_view.getHeight()/2 + 140, paint);
+
+        canvas.drawText(String.valueOf((String)engineer.getCurrentState()), canvasWidth,  canvasHeight, paint);
     }
 
    /* @Override
@@ -97,27 +100,31 @@ public class TakeCareView extends View
    }
 
 
-    private class GestureListener extends GestureDetector.SimpleOnGestureListener
-    {
+    private class GestureListener extends GestureDetector.SimpleOnGestureListener {
 
         @Override
-        public boolean onDown(MotionEvent e)
-        {
+        public boolean onDown(MotionEvent e) {
             return true;
         }
+
         //event when single tap occurs, engineers studies
         @Override
-        public boolean onSingleTapConfirmed(MotionEvent e)
-        {
+        public boolean onSingleTapConfirmed(MotionEvent e) {
             engineer.study();
             return true;
         }
+
         // event when double tap occurs, engineer socializes
         @Override
         public boolean onDoubleTapEvent(MotionEvent e)
         {
             engineer.socialize();
             return true;
+        }
+
+        public void onLongPress(MotionEvent e)
+        {
+            engineer.eat();
         }
     }
 }
