@@ -122,6 +122,8 @@ public class TakeCareView extends View
             if(mouse_x > canvasWidth - canvasWidth/10 && mouse_y > canvasHeight - canvasHeight/10)
             {
                 Intent endIntent = new Intent(getContext(), EndActivity.class);
+                endIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                getContext().startActivity(endIntent);
             }
             else {
                 engineer.study();
