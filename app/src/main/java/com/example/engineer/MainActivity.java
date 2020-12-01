@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
 
-        gameView = new TakeCareView(this, engineer);
+        //gameView = new TakeCareView(this, engineer);
+        gameView = new TakeCareView(this);
+
         setContentView(gameView);
 
 

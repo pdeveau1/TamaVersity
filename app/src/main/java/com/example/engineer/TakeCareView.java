@@ -34,6 +34,12 @@ public class TakeCareView extends View
 
     private Bitmap backgroundImage;
 
+    //testing UI buttons
+    private Bitmap studyButton;
+    private Bitmap eatButton;
+    private Bitmap socialButton;
+
+
     private TakeCare engineer = new TakeCare();
 
 
@@ -49,9 +55,14 @@ public class TakeCareView extends View
 
         player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
 
-        x = BitmapFactory.decodeResource(getResources(),R.drawable.x);
+        x = BitmapFactory.decodeResource(getResources(),R.drawable.redx);
 
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
+
+
+        studyButton = BitmapFactory.decodeResource(getResources(), R.drawable.book);
+        eatButton = BitmapFactory.decodeResource(getResources(), R.drawable.food);
+        socialButton = BitmapFactory.decodeResource(getResources(), R.drawable.social);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -78,6 +89,17 @@ public class TakeCareView extends View
 
         x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
+
+        //button for studying
+        studyButton = Bitmap.createScaledBitmap(studyButton, canvasWidth/10, canvasHeight/10, true);
+        canvas.drawBitmap(studyButton,  canvasWidth/15, canvasHeight - canvasHeight/9, null);
+        //button for health
+        eatButton = Bitmap.createScaledBitmap(eatButton, canvasWidth/10, canvasHeight/10, true);
+        canvas.drawBitmap(eatButton, canvasWidth/6, canvasHeight - canvasHeight/9, null);
+        //button for social
+        socialButton = Bitmap.createScaledBitmap(socialButton, canvasWidth/10, canvasHeight/10, true);
+        canvas.drawBitmap(socialButton, canvasWidth/4, canvasHeight - canvasHeight/9, null);
+
 
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
