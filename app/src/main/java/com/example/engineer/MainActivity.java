@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity
 {
 
     Button button;
+
     private TakeCareView gameView;
-    private TakeCare engineer = new TakeCare();
 
     private Handler handler = new Handler();
     private final static long Interval = 30;
@@ -26,8 +26,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Intent i = getIntent();
+        TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
-        gameView = new TakeCareView(this);
+
+        gameView = new TakeCareView(this, engineer);
         setContentView(gameView);
 
 

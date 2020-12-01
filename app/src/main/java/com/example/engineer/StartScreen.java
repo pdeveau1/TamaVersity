@@ -2,6 +2,7 @@ package com.example.engineer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,8 +27,8 @@ public class StartScreen extends AppCompatActivity {
                 }
                 finally
                 {
-                    Intent mainIntent = new Intent(StartScreen.this, MainActivity.class);
-                    startActivity(mainIntent);
+                    Intent loadIntent = new Intent(StartScreen.this, LoadActivity.class);
+                    startActivity(loadIntent);
                 }
             }
         };
