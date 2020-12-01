@@ -10,19 +10,11 @@
     tools:visibility="visible">
 
     <TextView
-        android:id="@+id/displayMessage"
         android:layout_width="347dp"
         android:layout_height="138dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:text="TamaVersity"
-        android:textSize="60sp"
+        android:text="Welcome! Tap to study. Double tap to socialize. Hold to eat."
+        android:textSize="30sp"
         android:textStyle="normal|bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        tools:layout_editor_absoluteX="31dp"
+        tools:layout_editor_absoluteY="132dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
