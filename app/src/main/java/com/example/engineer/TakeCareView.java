@@ -1,7 +1,6 @@
 package com.example.engineer;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -30,8 +29,6 @@ public class TakeCareView extends View
 
     private Bitmap player;
 
-    private Bitmap x;
-
     private Bitmap backgroundImage;
 
     private TakeCare engineer = new TakeCare();
@@ -48,8 +45,6 @@ public class TakeCareView extends View
         social_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
 
         player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
-
-        x = BitmapFactory.decodeResource(getResources(),R.drawable.x);
 
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
     }
@@ -75,9 +70,6 @@ public class TakeCareView extends View
 
         player = Bitmap.createScaledBitmap(player,canvasWidth/3, canvasHeight/2, true);
         canvas.drawBitmap(player, canvasWidth/3, canvasHeight/2, null);
-
-        x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
-        canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
 
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
@@ -117,15 +109,7 @@ public class TakeCareView extends View
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e)
         {
-            int mouse_x = (int)e.getX();
-            int mouse_y = (int)e.getY();
-            if(mouse_x > canvasWidth - canvasWidth/10 && mouse_y > canvasHeight - canvasHeight/10)
-            {
-                Intent endIntent = new Intent(getContext(), EndActivity.class);
-            }
-            else {
-                engineer.study();
-            }
+            engineer.study();
             return true;
         }
         // event when double tap occurs, engineer socializes
@@ -140,5 +124,4 @@ public class TakeCareView extends View
 
 //test to push - Lesly
 //test to push - Ahsan
-
 
