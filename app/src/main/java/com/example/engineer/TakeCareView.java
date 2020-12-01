@@ -1,3 +1,4 @@
+//creates the visuals for the game
 package com.example.engineer;
 
 import android.content.Context;
@@ -66,29 +67,35 @@ public class TakeCareView extends View
     {
         super.onDraw(canvas);
 
+        //sets values for paint
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        //paint.style = Paint.Style.FILL;
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         paint.setTextSize(50);
 
 
+        //gets size of screen
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
 
+        //updates background image to fit entire screen
         backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth, canvasHeight, true);
         canvas.drawBitmap(backgroundImage, 0, 0, null);
 
+        //updates player image to be in bottom middle of screen
         player = Bitmap.createScaledBitmap(player,canvasWidth/3, canvasHeight/2, true);
         canvas.drawBitmap(player, canvasWidth/3, canvasHeight/2, null);
 
+        //puts x in bottom right corner of screen
         x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
 
+        //adds the status bars at the top of the screen
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
         canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
 
+        //adds percentages for the status bars
         canvas.drawText(String.valueOf((int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*10, academic_view.getHeight()/2, paint);
         canvas.drawText(String.valueOf((int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*10, health_view.getHeight()/2 + 70, paint);
         canvas.drawText(String.valueOf((int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*10, social_view.getHeight()/2 + 140, paint);
@@ -119,7 +126,7 @@ public class TakeCareView extends View
         {
             return true;
         }
-        //event when single tap occurs, engineers studies
+        //event when single tap occurs, engineer studies
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e)
         {
@@ -151,6 +158,3 @@ public class TakeCareView extends View
         }
     }
 }
-
-//test to push - Lesly
-//test to push - Ahsan
