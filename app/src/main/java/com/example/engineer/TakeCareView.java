@@ -2,6 +2,7 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -34,35 +35,29 @@ public class TakeCareView extends View
 
     private Bitmap backgroundImage;
 
-    //testing UI buttons
-    private Bitmap studyButton;
-    private Bitmap eatButton;
-    private Bitmap socialButton;
+    private TakeCare engineer;
 
 
-    private TakeCare engineer = new TakeCare();
-
-
-    public TakeCareView(Context context)
+    public TakeCareView(Context context, TakeCare new_engineer)
     {
         super(context);
+        engineer = new_engineer;
 
         gestureDetector = new GestureDetector(context, new GestureListener());
 
+        //creates bitmap for the status bars
         academic_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         health_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
         social_view = BitmapFactory.decodeResource(getResources(), R.drawable.line);
 
+        //creates engineer bitmap
         player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
 
-        x = BitmapFactory.decodeResource(getResources(),R.drawable.redx);
+        //creates bitmap for exit button
+        x = BitmapFactory.decodeResource(getResources(),R.drawable.x);
 
+        //creates bitmap for background
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
-
-
-        studyButton = BitmapFactory.decodeResource(getResources(), R.drawable.book);
-        eatButton = BitmapFactory.decodeResource(getResources(), R.drawable.food);
-        socialButton = BitmapFactory.decodeResource(getResources(), R.drawable.social);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -89,17 +84,6 @@ public class TakeCareView extends View
 
         x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
-
-        //button for studying
-        studyButton = Bitmap.createScaledBitmap(studyButton, canvasWidth/10, canvasHeight/10, true);
-        canvas.drawBitmap(studyButton,  canvasWidth/15, canvasHeight - canvasHeight/9, null);
-        //button for health
-        eatButton = Bitmap.createScaledBitmap(eatButton, canvasWidth/10, canvasHeight/10, true);
-        canvas.drawBitmap(eatButton, canvasWidth/6, canvasHeight - canvasHeight/9, null);
-        //button for social
-        socialButton = Bitmap.createScaledBitmap(socialButton, canvasWidth/10, canvasHeight/10, true);
-        canvas.drawBitmap(socialButton, canvasWidth/4, canvasHeight - canvasHeight/9, null);
-
 
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
@@ -144,6 +128,7 @@ public class TakeCareView extends View
             if(mouse_x > canvasWidth - canvasWidth/10 && mouse_y > canvasHeight - canvasHeight/10)
             {
                 Intent endIntent = new Intent(getContext(), EndActivity.class);
+                endIntent.putExtra("Engineer", engineer);
                 endIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 getContext().startActivity(endIntent);
             }

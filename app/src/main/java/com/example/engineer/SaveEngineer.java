@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SaveEngineer extends AppCompatActivity
 {
-    TextView tv_academic;
 
     float lastAcademic, lastHealth, lastSocial;
 
@@ -21,13 +20,10 @@ public class SaveEngineer extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saveengineer);
 
-        tv_academic = (TextView) findViewById(R.id.tv_academic);
-
         SharedPreferences preferences = getSharedPreferences("PREFS", 0);
-        lastAcademic = preferences.getFloat("lastAcademic",0);
-        lastHealth = preferences.getFloat("lastHealth",0);
-        lastSocial = preferences.getFloat("lastSocial",0);
-
+        lastAcademic = preferences.getFloat("lastAcademic",20);
+        lastHealth = preferences.getFloat("lastHealth",20);
+        lastSocial = preferences.getFloat("lastSocial",20);
     }
 
     @Override

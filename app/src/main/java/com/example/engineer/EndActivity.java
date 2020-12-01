@@ -19,6 +19,8 @@ public class EndActivity extends AppCompatActivity
         setContentView(R.layout.activity_end);
         button = (Button) findViewById(R.id.button);
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
+
+        //when button clicked saves data
         button.setOnClickListener(new View.OnClickListener()
         {
             @Override

@@ -15,9 +15,6 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity
 {
-
-    Button button;
-
     private TakeCareView gameView;
 
     private Handler handler = new Handler();
@@ -26,7 +23,6 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Intent i = getIntent();
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
 
@@ -35,7 +31,7 @@ public class MainActivity extends AppCompatActivity
 
         setContentView(gameView);
 
-
+            //creates interval to continuously update the screen view
             Timer timer = new Timer();
 
             timer.schedule(new TimerTask() {
@@ -51,27 +47,6 @@ public class MainActivity extends AppCompatActivity
 
                 }
             }, 0, Interval);
-
-
- /*
-        button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                SharedPreferences preferences = getSharedPreferences("PREFS",0);
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.putFloat("lastAcademic",engineer.getAcademic());
-                editor.putFloat("lastHealth",engineer.getHealth());
-                editor.putFloat("lastSocial",engineer.getSocial());
-                editor.apply();
-
-                Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
-                startActivity(intent);
-                finish();
-            }
-        });*/
-
     }
 }
 
