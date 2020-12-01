@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Engineer</string>
+    <string name="welcome_tap_to_study_double_tap_to_socialize_hold_to_eat">Welcome! Tap to study. Double tap to socialize. Hold to eat.</string>
 </resources>
