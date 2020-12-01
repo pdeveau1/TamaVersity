@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //gameView = new TakeCareView(this, engineer);
-        gameView = new TakeCareView(this);
+        gameView = new TakeCareView(this, engineer);
 
         setContentView(gameView);
 
