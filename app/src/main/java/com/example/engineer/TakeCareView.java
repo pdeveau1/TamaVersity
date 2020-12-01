@@ -135,6 +135,11 @@ public class TakeCareView extends View
             engineer.socialize();
             return true;
         }
+        // event when long tap occurs, engineer eats
+        public void onLongPress(MotionEvent e)
+        {
+            engineer.eat();
+        }
     }
 }
 
