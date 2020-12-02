@@ -13,6 +13,7 @@ public class TakeCare implements Serializable
     private static int MAX_VAL = 100;
 
     //sets all states initially to max the states can be
+    //test
     private float academics;
     private float health;
     private float social;
