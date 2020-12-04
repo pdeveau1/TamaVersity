@@ -37,12 +37,12 @@ public class DateActivity extends AppCompatActivity {
             {
                 tvw.setText("Selected Date: "+ picker.getDayOfMonth()+"-"+ (picker.getMonth() + 1)+"-"+picker.getYear());
                // String dateString = $.datepicker.formatDate("dd-mm-yy", picker);
-                String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+                String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
                 tvw.setText(currentDate);
 
                 //saves date semester ends
                 //date format:dd-MM-yyyy
-                String date = picker.getDayOfMonth()+"-"+(picker.getMonth() + 1)+"-"+picker.getYear();
+                String date = (picker.getMonth() + 1) +"-"+ picker.getDayOfMonth() +"-"+ picker.getYear();
                 tvw1.setText(date);
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
