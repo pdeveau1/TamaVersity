@@ -40,6 +40,10 @@ public class TakeCareView extends View
     private Bitmap eatButton;
     private Bitmap socialButton;
 
+    private Bitmap studyBar;
+    private Bitmap eatBar;
+    private Bitmap socialBar;
+
     private TakeCare engineer;
 
 
@@ -108,9 +112,16 @@ public class TakeCareView extends View
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
         canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
 
-        canvas.drawText(String.valueOf("Academics " + (int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*23, academic_view.getHeight()/2, paint);
-        canvas.drawText(String.valueOf("Health " + (int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*17, health_view.getHeight()/2 + 70, paint);
-        canvas.drawText(String.valueOf("Social " + (int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*18, social_view.getHeight()/2 + 140, paint);
+        canvas.drawText(String.valueOf((int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*10, academic_view.getHeight()/2, paint);
+        canvas.drawText(String.valueOf((int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*10, health_view.getHeight()/2 + 70, paint);
+        canvas.drawText(String.valueOf((int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*10, social_view.getHeight()/2 + 140, paint);
+
+        studyBar = Bitmap.createScaledBitmap(studyButton, canvasWidth/30, canvasHeight/40, true);
+        canvas.drawBitmap(studyBar, canvasWidth - engineer.getAcademic()*10 + 90,0, null);
+        eatBar = Bitmap.createScaledBitmap(eatButton, canvasWidth/30, canvasHeight/40, true);
+        canvas.drawBitmap(eatBar, canvasWidth - engineer.getHealth()*10 + 90,academic_view.getHeight(), null);
+        socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
+        canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
     }
 
    /* @Override
@@ -132,7 +143,6 @@ public class TakeCareView extends View
 
     private class GestureListener extends GestureDetector.SimpleOnGestureListener
     {
-
         @Override
         public boolean onDown(MotionEvent e)
         {
