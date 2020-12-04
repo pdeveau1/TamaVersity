@@ -9,13 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engineer">
-        <activity android:name=".StartActivity"></activity>
+<!--        <activity android:name=".StartActivity"></activity>-->
         <activity android:name=".DateActivity" />
-        <activity android:name=".Date" />
         <activity android:name=".LoadActivity" />
         <activity android:name=".EndActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".StartScreen">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
