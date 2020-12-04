@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="257dp" />
+        tools:layout_editor_absoluteX="233dp"
+        tools:layout_editor_absoluteY="342dp" />
 
     <DatePicker
         android:id="@+id/datePicker1"
@@ -26,8 +26,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/datePicker1"
-        android:layout_marginLeft="100dp"
-        android:text="Get Date" />
+        android:text="Get Date"
+        tools:layout_editor_absoluteX="28dp"
+        tools:layout_editor_absoluteY="332dp" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
@@ -37,5 +39,13 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="18dp"/>
+
+    <TextView
+        android:id="@+id/tvDate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="239dp"
+        tools:layout_editor_absoluteY="396dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
