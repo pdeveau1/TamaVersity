@@ -52,7 +52,6 @@ public class TakeCareView extends View
     {
         super(context);
         engineer = new_engineer;
-        //date = new_date;
         gestureDetector = new GestureDetector(context, new GestureListener());
 
         //creates bitmap for the status bars
