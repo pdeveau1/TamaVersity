@@ -4,15 +4,26 @@ package com.example.engineer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoadActivity extends AppCompatActivity
 {
+    private static int SPLASH_TIME_OUT = 5000;
+
     private Button load_eng;
     private Button new_eng;
+
+    //animation variables
+    Animation topAnimation, bottomAnimation, middleAnimation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,6 +32,18 @@ public class LoadActivity extends AppCompatActivity
 
         load_eng = (Button) findViewById(R.id.load_eng);
         new_eng = (Button) findViewById(R.id.new_eng);
+
+        //animations
+        topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+        middleAnimation = AnimationUtils.loadAnimation(this, R.anim.middle_animation);
+
+
+
+        //setting animations
+        load_eng.setAnimation(topAnimation);
+        new_eng.setAnimation(bottomAnimation);
+
 
         //if user clicks to load the past engineer
         load_eng.setOnClickListener(new View.OnClickListener()
@@ -36,7 +59,7 @@ public class LoadActivity extends AppCompatActivity
                 String date = preferences.getString("Date","01/01/1999");
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social);
-                //creates new intent to go from LoadActivity to MainActivty
+                //creates new intent to go from LoadActivity to MainActivity
                 Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                 //passes to mainActivity the engineer
                 mainIntent.putExtra("Engineer", engineer);
