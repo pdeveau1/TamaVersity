@@ -10,7 +10,18 @@
         android:id="@+id/load_eng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOAD"
+        android:adjustViewBounds="false"
+        android:baselineAlignBottom="false"
+        android:contentDescription="@string/todo"
+        android:cropToPadding="false"
+        android:drawableBottom="@drawable/laptop"
+        android:focusableInTouchMode="false"
+        android:forceDarkAllowed="false"
+        android:gravity="center_horizontal"
+        android:isScrollContainer="false"
+        android:text="@string/load"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,11 +31,17 @@
         android:id="@+id/new_eng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:drawableBottom="@drawable/laptop"
         android:text="NEW"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/load_eng"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.04"
+        android:gravity="center_horizontal" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
