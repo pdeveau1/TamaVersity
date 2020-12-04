@@ -39,7 +39,7 @@ public class DateActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 tvw.setText("Selected Date: "+ picker.getDayOfMonth()+"-"+ (picker.getMonth() + 1)+"-"+picker.getYear());
-                String dateString = $.datepicker.formatDate("dd-mm-yy", picker);
+               // String dateString = $.datepicker.formatDate("dd-mm-yy", picker);
                 String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
                 tvw.setText(currentDate);
 
