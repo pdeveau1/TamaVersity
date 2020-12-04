@@ -16,6 +16,8 @@ public class TakeCare implements Serializable
     private float social;
     private float totalpoints;
 
+    private String name;
+
     private boolean pointCheck;
 
     private String currentState;
@@ -38,6 +40,11 @@ public class TakeCare implements Serializable
         totalpoints = 0;
         currentState = "fine";
         pointCheck = false;
+    }
+
+    public void setName(String new_name)
+    {
+        name = new_name;
     }
 
     //drop book to engineer it studies
@@ -134,6 +141,13 @@ public class TakeCare implements Serializable
 
     }
 
+    public void decrease()
+    {
+        health = health - 3;
+        social = social - 2;
+        academics = academics - 1;
+    }
+
     public float getAcademic()
     {
             return academics;
@@ -160,4 +174,6 @@ public class TakeCare implements Serializable
     {
         return MIN_VAL;
     }
+
+    public String getName(){return name;}
 }

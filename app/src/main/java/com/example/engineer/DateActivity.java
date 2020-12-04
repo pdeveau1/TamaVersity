@@ -1,5 +1,6 @@
 package com.example.engineer;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,6 @@ import java.util.Date;
 import java.util.Locale;
 
 public class DateActivity extends AppCompatActivity {
-
-    //    private static final String TAG = "Date";
-//    private TextView mDisplayDate;
-//    private DatePickerDialog.OnDateSetListener mDateSetListener;
     DatePicker picker;
     Button btnGet;
     TextView tvw;
@@ -52,17 +49,17 @@ public class DateActivity extends AppCompatActivity {
                 editor.putString("Date",date);
                 editor.apply();
 
-//                Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
-//                startActivity(intent);
-//                finish();
+                Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
+                startActivity(intent);
+                finish();
 
-//                //takes to main game
-//                Intent mainIntent = new Intent(DateActivity.this, MainActivity.class);
-//                //passes to mainActivity the engineer
-//                mainIntent.putExtra("Engineer", engineer);
-//                mainIntent.putExtra("Date", date);
-//                //starts main activity
-//                startActivity(mainIntent);
+                //takes to main game
+                Intent mainIntent = new Intent(DateActivity.this, MainActivity.class);
+                //passes to mainActivity the engineer
+                mainIntent.putExtra("Engineer", engineer);
+                mainIntent.putExtra("Date", date);
+                //starts main activity
+                startActivity(mainIntent);
             }
         });
     }
