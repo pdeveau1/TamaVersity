@@ -69,10 +69,16 @@ public class TakeCareView extends View
         //creates bitmap for background
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
 
+        //creates bitmap for studying button
         studyButton = BitmapFactory.decodeResource(getResources(), R.drawable.book);
+
+        //creates bitmap for eating button
         eatButton = BitmapFactory.decodeResource(getResources(), R.drawable.food);
+
+        //creates bitmap for socializing button
         socialButton = BitmapFactory.decodeResource(getResources(), R.drawable.social);
 
+        //creates bitmap for thinking
         think = BitmapFactory.decodeResource(getResources(), R.drawable.think);
     }
 
@@ -108,9 +114,11 @@ public class TakeCareView extends View
         //button for studying
         studyButton = Bitmap.createScaledBitmap(studyButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(studyButton,  canvasWidth/15, canvasHeight - canvasHeight/9, null);
+
         //button for health
         eatButton = Bitmap.createScaledBitmap(eatButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(eatButton, canvasWidth/6, canvasHeight - canvasHeight/9, null);
+
         //button for social
         socialButton = Bitmap.createScaledBitmap(socialButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(socialButton, canvasWidth/4, canvasHeight - canvasHeight/9, null);
@@ -204,5 +212,3 @@ public class TakeCareView extends View
     }
 }
 
-//test to push - Lesly
-//test to push - Ahsan

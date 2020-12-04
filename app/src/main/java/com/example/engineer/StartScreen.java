@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+//LOGO SCREEN
 public class StartScreen extends AppCompatActivity {
 
     @Override
@@ -27,6 +28,7 @@ public class StartScreen extends AppCompatActivity {
                 }
                 finally
                 {
+                    //Following Screen -> Load/New Screen
                     Intent loadIntent = new Intent(StartScreen.this, LoadActivity.class);
                     startActivity(loadIntent);
                 }

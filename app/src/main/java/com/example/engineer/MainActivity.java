@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity
     private Handler handler = new Handler();
     private final static long Interval = 30;
 
-    private static int SPLASH_TIME_OUT = 8000;
+    private static int SPLASH_TIME_OUT = 5000;
 
     //hooks
-    ImageView logopic;
+    ImageView logoPic;
     TextView name;
 
 
@@ -38,7 +38,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
 
@@ -53,33 +55,41 @@ public class MainActivity extends AppCompatActivity
         middleAnimation = AnimationUtils.loadAnimation(this, R.anim.middle_animation);
 
         //hooks
-        logopic = findViewById(R.id.logo);
+        logoPic = findViewById(R.id.logo);
         name = findViewById(R.id.gameName);
 
         //setting animations
-        logopic.setAnimation(topAnimation);
+        logoPic.setAnimation(topAnimation);
         name.setAnimation(bottomAnimation);
 
 
         //splash screen
-        //creates interval to continuously update the screen view
-            Timer timer = new Timer();
-
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //creates new intent to go from MainActivity to LoadActivity
                 Intent intent = new Intent(MainActivity.this, LoadActivity.class);
                 startActivity(intent);
                 finish();
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                gameView.invalidate();
-                            }
-                        });
+            }
+        }, SPLASH_TIME_OUT);
 
-                }
-            }, SPLASH_TIME_OUT);
+        //creates interval to continuously update the screen view
+        Timer timer = new Timer();
+
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        gameView.invalidate();
+                    }
+                });
+
+            }
+        }, 0, Interval);
     }
 }
 
