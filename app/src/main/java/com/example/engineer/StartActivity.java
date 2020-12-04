@@ -3,6 +3,7 @@ package com.example.engineer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -25,6 +26,7 @@ public class StartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_start);
 
         //animations
@@ -45,7 +47,7 @@ public class StartActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //creates new intent to go from MainActivity to LoadActivity
+                //creates new intent to go from StartActivity to LoadActivity
                 Intent intent = new Intent(StartActivity.this, LoadActivity.class);
                 startActivity(intent);
                 finish();

@@ -43,8 +43,8 @@ public class TakeCare implements Serializable
     //drop book to engineer it studies
     public void study()
     {
-        academics += 3;
-        totalpoints += 3;
+        academics += 6;
+        totalpoints += 6;
         health -= 1;
         social -= 2;
 
@@ -66,6 +66,7 @@ public class TakeCare implements Serializable
     public void eat()
     {
         health += 3;
+        academics -= 1;
         totalpoints += 3;
         if(health >= MAX_VAL)
         {
@@ -76,9 +77,9 @@ public class TakeCare implements Serializable
     //give engineer a friend it socializes
     public void socialize()
     {
-        social += 2;
-        health += 1;
-        totalpoints += 3;
+        social += 5;
+        health += 2;
+        totalpoints += 7;
         academics -= 2;
 
         if (social >= MAX_VAL)
@@ -110,7 +111,7 @@ public class TakeCare implements Serializable
         //if academics is greater than social by 15 will need to see friends
         else if(academics >= social + 15)
         {
-            currentState = "I should take a break and go see my friends";
+            currentState = "I miss my friends";
         }
         //otherwise doing good
         else

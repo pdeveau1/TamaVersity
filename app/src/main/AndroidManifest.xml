@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engineer">
-        <activity android:name=".FinishActivity"></activity>
-        <!-- <activity android:name=".StartActivity"></activity> -->
+<!--        <activity android:name=".StartActivity"></activity>-->
         <activity android:name=".DateActivity" />
         <activity android:name=".LoadActivity" />
         <activity android:name=".EndActivity" />
