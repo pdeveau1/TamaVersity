@@ -1,9 +1,6 @@
 //class to update the values of the engineer
 package com.example.engineer;
-import android.content.Context;
-import android.content.SharedPreferences;
-
-import java.io.*;
+import java.io.Serializable;
 
 public class TakeCare implements Serializable
 {
@@ -98,7 +95,7 @@ public class TakeCare implements Serializable
         }
     }
 
-    public void CurrentState()
+    public String getCurrentState()
     {
         //if social is greater than academics by 10 will need to study
         if(social >= academics + 10)
@@ -120,6 +117,7 @@ public class TakeCare implements Serializable
         {
             currentState = "Fine";
         }
+        return currentState;
     }
 
     public boolean checkPoints()
@@ -150,7 +148,7 @@ public class TakeCare implements Serializable
         return social;
     }
 
-    public String getCurrentState() { return currentState; }
+    //public String getCurrentState() { return currentState; }
 
     public float getMax()
     {

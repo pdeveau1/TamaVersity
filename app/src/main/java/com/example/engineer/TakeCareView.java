@@ -2,7 +2,6 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -10,8 +9,6 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Build;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -24,6 +21,8 @@ public class TakeCareView extends View
 
     private int canvasWidth;
     private int canvasHeight;
+
+    private String date;
 
     private Bitmap academic_view;
     private Bitmap health_view;
@@ -44,14 +43,16 @@ public class TakeCareView extends View
     private Bitmap eatBar;
     private Bitmap socialBar;
 
+    private Bitmap think;
+
     private TakeCare engineer;
 
 
-    public TakeCareView(Context context, TakeCare new_engineer)
+    public TakeCareView(Context context, TakeCare new_engineer, String new_date)
     {
         super(context);
         engineer = new_engineer;
-
+        date = new_date;
         gestureDetector = new GestureDetector(context, new GestureListener());
 
         //creates bitmap for the status bars
@@ -71,6 +72,8 @@ public class TakeCareView extends View
         studyButton = BitmapFactory.decodeResource(getResources(), R.drawable.book);
         eatButton = BitmapFactory.decodeResource(getResources(), R.drawable.food);
         socialButton = BitmapFactory.decodeResource(getResources(), R.drawable.social);
+
+        think = BitmapFactory.decodeResource(getResources(), R.drawable.think);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -85,6 +88,10 @@ public class TakeCareView extends View
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         paint.setTextSize(50);
 
+        Paint paintEng = new Paint();
+        paintEng.setColor(Color.WHITE);
+        paintEng.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
+        paintEng.setTextSize(100);
 
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
@@ -92,8 +99,8 @@ public class TakeCareView extends View
         backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth, canvasHeight, true);
         canvas.drawBitmap(backgroundImage, 0, 0, null);
 
-        player = Bitmap.createScaledBitmap(player,canvasWidth/3, canvasHeight/2, true);
-        canvas.drawBitmap(player, canvasWidth/3, canvasHeight/2, null);
+        player = Bitmap.createScaledBitmap(player,canvasWidth, canvasHeight, true);
+        canvas.drawBitmap(player, 0, canvasWidth/4, null);
 
         x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
@@ -122,6 +129,9 @@ public class TakeCareView extends View
         canvas.drawBitmap(eatBar, canvasWidth - engineer.getHealth()*10 + 90,academic_view.getHeight(), null);
         socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
+
+        canvas.drawBitmap(think, canvasWidth/3,0, null);
+        canvas.drawText(engineer.getCurrentState(), canvasWidth/2, canvasHeight/4, paintEng);
     }
 
    /* @Override
