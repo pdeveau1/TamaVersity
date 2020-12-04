@@ -47,6 +47,7 @@ public class TakeCareView extends View
 
     private TakeCare engineer;
 
+    private int count;
 
     public TakeCareView(Context context, TakeCare new_engineer)
     {
@@ -79,6 +80,8 @@ public class TakeCareView extends View
 
         //creates bitmap for thinking
         think = BitmapFactory.decodeResource(getResources(), R.drawable.think);
+
+        count = 0;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -140,6 +143,16 @@ public class TakeCareView extends View
         think = Bitmap.createScaledBitmap(think, canvasWidth/6, canvasHeight/4, true);
         canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
         canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
+
+        if(count != 300)
+        {
+            count++;
+        }
+        else
+        {
+            engineer.decrease();
+            count = 0;
+        }
     }
 
    /* @Override
