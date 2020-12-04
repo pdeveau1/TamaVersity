@@ -59,7 +59,7 @@ public class TakeCareView extends View
         player = BitmapFactory.decodeResource(getResources(),R.drawable.student);
 
         //creates bitmap for exit button
-        x = BitmapFactory.decodeResource(getResources(),R.drawable.x);
+        x = BitmapFactory.decodeResource(getResources(),R.drawable.redx);
 
         //creates bitmap for background
         backgroundImage = BitmapFactory.decodeResource(getResources(), R.drawable.dorm);
