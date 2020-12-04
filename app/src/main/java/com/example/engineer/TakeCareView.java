@@ -109,8 +109,8 @@ public class TakeCareView extends View
         canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
 
         canvas.drawText(String.valueOf("Academics " + (int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*23, academic_view.getHeight()/2, paint);
-        canvas.drawText(String.valueOf("Health " + (int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*18, health_view.getHeight()/2 + 70, paint);
-        canvas.drawText(String.valueOf("Social " + (int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*17, social_view.getHeight()/2 + 140, paint);
+        canvas.drawText(String.valueOf("Health " + (int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*17, health_view.getHeight()/2 + 70, paint);
+        canvas.drawText(String.valueOf("Social " + (int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*18, social_view.getHeight()/2 + 140, paint);
     }
 
    /* @Override
@@ -151,11 +151,24 @@ public class TakeCareView extends View
                 endIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 getContext().startActivity(endIntent);
             }
-            else {
+            //study button
+            else if(mouse_x > canvasWidth/15 && mouse_x < canvasWidth/6 && mouse_y > canvasHeight - canvasHeight/9)
+            {
                 engineer.study();
+            }
+            //health button
+            else if(mouse_x > canvasWidth/6 && mouse_x < canvasWidth/4 && mouse_y > canvasHeight - canvasHeight/9)
+            {
+                engineer.eat();
+            }
+            //social button
+            else if(mouse_x > canvasWidth/4 && mouse_x < canvasWidth/3 && mouse_y > canvasHeight - canvasHeight/9)
+            {
+                engineer.socialize();
             }
             return true;
         }
+        /*
         // event when double tap occurs, engineer socializes
         @Override
         public boolean onDoubleTapEvent(MotionEvent e)
@@ -167,7 +180,7 @@ public class TakeCareView extends View
         public void onLongPress(MotionEvent e)
         {
             engineer.eat();
-        }
+        }*/
     }
 }
 
