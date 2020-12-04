@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class DateActivity extends AppCompatActivity {
 
-//    private static final String TAG = "Date";
+    //    private static final String TAG = "Date";
 //    private TextView mDisplayDate;
 //    private DatePickerDialog.OnDateSetListener mDateSetListener;
     DatePicker picker;
