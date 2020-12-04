@@ -48,12 +48,11 @@ public class TakeCareView extends View
     private TakeCare engineer;
 
 
-    public TakeCareView(Context context, TakeCare new_engineer, String new_date)
+    public TakeCareView(Context context, TakeCare new_engineer)
     {
         super(context);
         engineer = new_engineer;
-        date = new_date;
-
+        //date = new_date;
         gestureDetector = new GestureDetector(context, new GestureListener());
 
         //creates bitmap for the status bars
