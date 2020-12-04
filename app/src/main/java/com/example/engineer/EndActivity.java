@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 public class EndActivity extends AppCompatActivity
@@ -26,6 +28,8 @@ public class EndActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                Animation bounceAnimation = AnimationUtils.loadAnimation(EndActivity.this, R.anim.bounce_animation);
+                button.startAnimation(bounceAnimation);
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putFloat("lastAcademic",engineer.getAcademic());
