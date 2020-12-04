@@ -30,10 +30,11 @@ public class MainActivity extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
+
         String date = (String)getIntent().getSerializableExtra("Date");
         String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
-        if(date==currentDate)
+        if(date.compareTo(currentDate) == 0)
         {
             Intent finishIntent = new Intent(MainActivity.this, FinishActivity.class);
             startActivity(finishIntent);
