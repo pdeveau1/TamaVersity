@@ -94,9 +94,9 @@ public class TakeCareView extends View
         paint.setTextSize(50);
 
         Paint paintEng = new Paint();
-        paintEng.setColor(Color.WHITE);
+        paintEng.setColor(Color.BLACK);
         paintEng.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
-        paintEng.setTextSize(100);
+        paintEng.setTextSize(50);
 
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
@@ -137,8 +137,9 @@ public class TakeCareView extends View
         socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
-        canvas.drawBitmap(think, canvasWidth/3,0, null);
-        canvas.drawText(engineer.getCurrentState(), canvasWidth/8, canvasHeight/4, paintEng);
+        think = Bitmap.createScaledBitmap(think, canvasWidth/6, canvasHeight/4, true);
+        canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
+        canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
     }
 
    /* @Override
