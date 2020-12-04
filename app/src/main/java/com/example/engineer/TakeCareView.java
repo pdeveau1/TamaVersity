@@ -138,7 +138,7 @@ public class TakeCareView extends View
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
         canvas.drawBitmap(think, canvasWidth/3,0, null);
-        canvas.drawText(engineer.getCurrentState(), canvasWidth/2, canvasHeight/4, paintEng);
+        canvas.drawText(engineer.getCurrentState(), canvasWidth/8, canvasHeight/4, paintEng);
     }
 
    /* @Override
