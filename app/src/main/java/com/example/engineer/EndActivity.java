@@ -19,8 +19,8 @@ public class EndActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_end);
-        button = (Button) findViewById(R.id.button);
-        TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
+        button = (Button)findViewById(R.id.button);
+        engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
         //when button clicked saves data
         button.setOnClickListener(new View.OnClickListener()
@@ -37,10 +37,9 @@ public class EndActivity extends AppCompatActivity
                 editor.putFloat("lastSocial",engineer.getSocial());
                 editor.apply();
 
-                Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
-                startActivity(intent);
+                Intent save = new Intent(getApplicationContext(), SaveEngineer.class);
+                startActivity(save);
                 finish();
-                System.exit(0);
             }
         });
     }

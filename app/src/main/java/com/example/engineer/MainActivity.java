@@ -23,13 +23,16 @@ public class MainActivity extends AppCompatActivity
     private final static long Interval = 30;
 
 
+    private TakeCare engineer;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
+        engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
         String date = (String)getIntent().getSerializableExtra("Date");
         String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
