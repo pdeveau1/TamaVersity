@@ -28,16 +28,18 @@ public class TakeCare implements Serializable
         health = 20;
         social = 20;
         totalpoints = 0;
+        name = "Jimmy";
         currentState = "Say hello to " + name;
         pointCheck = false;
     }
 
-    public TakeCare(float old_academics, float old_health, float old_social)
+    public TakeCare(float old_academics, float old_health, float old_social, String old_name)
     {
         academics = old_academics;
         health = old_health;
         social = old_social;
         totalpoints = 0;
+        name = old_name;
         currentState = "Say hello to " + name;
         pointCheck = false;
     }
@@ -45,6 +47,7 @@ public class TakeCare implements Serializable
     public void setName(String new_name)
     {
         name = new_name;
+        currentState = "Say hello to " + name;
     }
 
     //drop book to engineer it studies

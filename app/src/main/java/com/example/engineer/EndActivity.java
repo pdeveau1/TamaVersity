@@ -40,7 +40,7 @@ public class EndActivity extends AppCompatActivity
                 Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
                 startActivity(intent);
                 finish();
-                System.exit(0);
+                //System.exit(0);
             }
         });
     }

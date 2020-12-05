@@ -1,7 +1,5 @@
 package com.example.engineer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,7 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static java.lang.Thread.sleep;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class NameActivity extends AppCompatActivity {
     String name;

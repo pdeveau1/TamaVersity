@@ -53,10 +53,11 @@ public class LoadActivity extends AppCompatActivity
                 float academics = preferences.getFloat("lastAcademic",20);
                 float health = preferences.getFloat("lastHealth",20);
                 float social = preferences.getFloat("lastSocial",20);
+                String name = preferences.getString("Name","Jimmy");
                 String date = preferences.getString("Date","01-01-3000");
                 //creates new TakeCare object with saved data
-                TakeCare engineer = new TakeCare(academics, health, social);
-                engineer.setName(preferences.getString("Name","Jimmy"));
+                TakeCare engineer = new TakeCare(academics, health, social,name);
+                //engineer.setName(preferences.getString("Name","Jimmy"));
                 //creates new intent to go from LoadActivity to MainActivity
                 Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                 //passes to mainActivity the engineer
