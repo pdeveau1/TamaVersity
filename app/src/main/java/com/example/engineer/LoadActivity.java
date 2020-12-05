@@ -11,6 +11,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class LoadActivity extends AppCompatActivity
 {
     private static int SPLASH_TIME_OUT = 5000;
@@ -59,12 +63,22 @@ public class LoadActivity extends AppCompatActivity
                 TakeCare engineer = new TakeCare(academics, health, social, name);
                 //engineer.setName(preferences.getString("Name","Jimmy"));
                 //creates new intent to go from LoadActivity to MainActivity
-                Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
-                //passes to mainActivity the engineer
-                mainIntent.putExtra("Engineer", engineer);
-                mainIntent.putExtra("Date", date);
-                //starts main activity
-                startActivity(mainIntent);
+                String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
+
+                if(date.compareTo(currentDate) <= 0)
+                {
+                    Intent finishIntent = new Intent(LoadActivity.this, FinishActivity.class);
+                    finishIntent.putExtra("Engineer", engineer);
+                    startActivity(finishIntent);
+                }
+                else {
+                    Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
+                    //passes to mainActivity the engineer
+                    mainIntent.putExtra("Engineer", engineer);
+                    mainIntent.putExtra("Date", date);
+                    //starts main activity
+                    startActivity(mainIntent);
+                }
             }
         });
 

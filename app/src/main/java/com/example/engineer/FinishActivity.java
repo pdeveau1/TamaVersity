@@ -1,6 +1,7 @@
 package com.example.engineer;
 
 import android.os.Bundle;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +14,10 @@ public class FinishActivity extends AppCompatActivity {
     TextView healthGrade;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_finish);
         engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
