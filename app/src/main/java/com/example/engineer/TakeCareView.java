@@ -2,6 +2,7 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -47,11 +48,13 @@ public class TakeCareView extends View
 
     private TakeCare engineer;
 
+    private int count;
 
     public TakeCareView(Context context, TakeCare new_engineer)
     {
         super(context);
         engineer = new_engineer;
+
         gestureDetector = new GestureDetector(context, new GestureListener());
 
         //creates bitmap for the status bars
@@ -79,6 +82,8 @@ public class TakeCareView extends View
 
         //creates bitmap for thinking
         think = BitmapFactory.decodeResource(getResources(), R.drawable.think);
+
+        count = 0;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -140,6 +145,16 @@ public class TakeCareView extends View
         think = Bitmap.createScaledBitmap(think, canvasWidth/6, canvasHeight/4, true);
         canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
         canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
+
+        if(count != 300)
+        {
+            count++;
+        }
+        else
+        {
+            engineer.decrease();
+            count = 0;
+        }
     }
 
    /* @Override

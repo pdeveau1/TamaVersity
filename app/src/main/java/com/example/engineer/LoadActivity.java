@@ -4,13 +4,10 @@ package com.example.engineer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,9 +53,11 @@ public class LoadActivity extends AppCompatActivity
                 float academics = preferences.getFloat("lastAcademic",20);
                 float health = preferences.getFloat("lastHealth",20);
                 float social = preferences.getFloat("lastSocial",20);
-                String date = preferences.getString("Date","01/01/1999");
+                String name = preferences.getString("Name","Jimmy");
+                String date = preferences.getString("Date","01-01-3000");
                 //creates new TakeCare object with saved data
-                TakeCare engineer = new TakeCare(academics, health, social);
+                TakeCare engineer = new TakeCare(academics, health, social,name);
+                //engineer.setName(preferences.getString("Name","Jimmy"));
                 //creates new intent to go from LoadActivity to MainActivity
                 Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                 //passes to mainActivity the engineer
@@ -77,11 +76,11 @@ public class LoadActivity extends AppCompatActivity
                 //creates new TakeCare object for new engineer
                 TakeCare engineer = new TakeCare();
                 //creates new intent to go from LoadActivity to MainActivity
-                Intent dateIntent = new Intent(LoadActivity.this, DateActivity.class);
+                Intent nameIntent = new Intent(LoadActivity.this, NameActivity.class);
                 //passes to mainActivity the engineer
-                dateIntent.putExtra("Engineer", engineer);
+                nameIntent.putExtra("Engineer", engineer);
                 //starts main activity
-                startActivity(dateIntent);
+                startActivity(nameIntent);
             }
         });
 

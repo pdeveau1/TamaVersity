@@ -15,6 +15,8 @@ public class TakeCare implements Serializable
     private float health;
     private float social;
     private float totalpoints;
+    private String name;
+
 
     private boolean pointCheck;
 
@@ -26,18 +28,26 @@ public class TakeCare implements Serializable
         health = 20;
         social = 20;
         totalpoints = 0;
-        currentState = "fine";
+        name = "Jimmy";
+        currentState = "Say hello to " + name;
         pointCheck = false;
     }
 
-    public TakeCare(float old_academics, float old_health, float old_social)
+    public TakeCare(float old_academics, float old_health, float old_social, String old_name)
     {
         academics = old_academics;
         health = old_health;
         social = old_social;
         totalpoints = 0;
-        currentState = "fine";
+        name = old_name;
+        currentState = "Say hello to " + name;
         pointCheck = false;
+    }
+
+    public void setName(String new_name)
+    {
+        name = new_name;
+        currentState = "Say hello to " + name;
     }
 
     //drop book to engineer it studies
@@ -114,7 +124,7 @@ public class TakeCare implements Serializable
             currentState = "I miss my friends";
         }
         //otherwise doing good
-        else
+        else if(totalpoints != 0)
         {
             currentState = "Fine";
         }
@@ -132,6 +142,13 @@ public class TakeCare implements Serializable
         }
         //System.out.printf("%d",totalpoints);
 
+    }
+
+    public void decrease()
+    {
+        health = health - 3;
+        social = social - 2;
+        academics = academics - 1;
     }
 
     public float getAcademic()
@@ -160,4 +177,6 @@ public class TakeCare implements Serializable
     {
         return MIN_VAL;
     }
+
+    public String getName(){return name;}
 }
