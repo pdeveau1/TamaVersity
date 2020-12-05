@@ -38,9 +38,9 @@ public class MainActivity extends AppCompatActivity
         String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
 
         if(date.compareTo(currentDate) <= 0)
-
         {
             Intent finishIntent = new Intent(MainActivity.this, FinishActivity.class);
+            finishIntent.putExtra("Engineer", engineer);
             startActivity(finishIntent);
         }
 

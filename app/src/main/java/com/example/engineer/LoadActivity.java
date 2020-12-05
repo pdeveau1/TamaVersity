@@ -50,9 +50,9 @@ public class LoadActivity extends AppCompatActivity
             {
                 //gets the saved information
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
-                float academics = preferences.getFloat("lastAcademic",20);
-                float health = preferences.getFloat("lastHealth",20);
-                float social = preferences.getFloat("lastSocial",20);
+                float academics = preferences.getFloat("lastAcademic",100);
+                float health = preferences.getFloat("lastHealth",100);
+                float social = preferences.getFloat("lastSocial",100);
                 String name = preferences.getString("Name","Jimmy");
                 String date = preferences.getString("Date","01-01-3000");
                 //creates new TakeCare object with saved data

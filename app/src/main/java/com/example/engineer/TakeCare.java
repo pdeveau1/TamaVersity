@@ -23,9 +23,9 @@ public class TakeCare implements Serializable
     public TakeCare()
     {
         //initially set ALL states to 20%
-        academics = 20;
-        health = 20;
-        social = 20;
+        academics = 100;
+        health = 100;
+        social = 100;
         //initially set total number of points to zero
         totalPoints = 0;
 
