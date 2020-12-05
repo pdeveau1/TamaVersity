@@ -2,6 +2,7 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -53,6 +54,7 @@ public class TakeCareView extends View
     {
         super(context);
         engineer = new_engineer;
+
         gestureDetector = new GestureDetector(context, new GestureListener());
 
         //creates bitmap for the status bars

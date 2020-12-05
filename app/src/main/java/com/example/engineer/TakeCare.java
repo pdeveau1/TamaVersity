@@ -15,8 +15,8 @@ public class TakeCare implements Serializable
     private float health;
     private float social;
     private float totalpoints;
-
     private String name;
+
 
     private boolean pointCheck;
 
@@ -28,7 +28,7 @@ public class TakeCare implements Serializable
         health = 20;
         social = 20;
         totalpoints = 0;
-        currentState = "fine";
+        currentState = "Say hello to " + name;
         pointCheck = false;
     }
 
@@ -38,7 +38,7 @@ public class TakeCare implements Serializable
         health = old_health;
         social = old_social;
         totalpoints = 0;
-        currentState = "fine";
+        currentState = "Say hello to " + name;
         pointCheck = false;
     }
 
@@ -121,7 +121,7 @@ public class TakeCare implements Serializable
             currentState = "I miss my friends";
         }
         //otherwise doing good
-        else
+        else if(totalpoints != 0)
         {
             currentState = "Fine";
         }

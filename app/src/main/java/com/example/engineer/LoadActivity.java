@@ -56,6 +56,7 @@ public class LoadActivity extends AppCompatActivity
                 String date = preferences.getString("Date","01-01-3000");
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social);
+                engineer.setName(preferences.getString("Name","Jimmy"));
                 //creates new intent to go from LoadActivity to MainActivity
                 Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                 //passes to mainActivity the engineer
@@ -74,11 +75,11 @@ public class LoadActivity extends AppCompatActivity
                 //creates new TakeCare object for new engineer
                 TakeCare engineer = new TakeCare();
                 //creates new intent to go from LoadActivity to MainActivity
-                Intent dateIntent = new Intent(LoadActivity.this, DateActivity.class);
+                Intent nameIntent = new Intent(LoadActivity.this, NameActivity.class);
                 //passes to mainActivity the engineer
-                dateIntent.putExtra("Engineer", engineer);
+                nameIntent.putExtra("Engineer", engineer);
                 //starts main activity
-                startActivity(dateIntent);
+                startActivity(nameIntent);
             }
         });
 
