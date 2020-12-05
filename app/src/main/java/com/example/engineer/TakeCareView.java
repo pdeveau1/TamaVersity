@@ -59,11 +59,6 @@ public class TakeCareView extends View
         paint.setTextSize(35);
         Canvas canvas = new Canvas(bm);
         canvas.drawText(text, bm.getWidth()/8, bm.getHeight()/2, paint);
-
-
-        //Bitmap bm = BitmapFactory.decodeResource(getResources(), drawableId).copy(Bitmap.Config.ARGB_8888, true);
-        think = BitmapFactory.decodeResource(getResources(), drawableId).copy(Bitmap.Config.ARGB_8888, true);
-        think = Bitmap.createScaledBitmap(think, canvasWidth/3, canvasHeight/3, true);
         return bm;
     }
 
