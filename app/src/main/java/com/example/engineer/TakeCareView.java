@@ -142,7 +142,7 @@ public class TakeCareView extends View
         socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
-        think = Bitmap.createScaledBitmap(think, canvasWidth/6, canvasHeight/4, true);
+        think = Bitmap.createScaledBitmap(think, canvasWidth/4, canvasHeight/3, true);
         canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
         canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
 
