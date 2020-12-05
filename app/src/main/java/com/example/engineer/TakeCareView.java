@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -45,10 +46,24 @@ public class TakeCareView extends View
     private Bitmap socialBar;
 
     private Bitmap think;
+    private Bitmap think2;
 
     private TakeCare engineer;
 
     private int count;
+
+    public Bitmap writeOnDrawable(int drawableId, String text){
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), drawableId).copy(Bitmap.Config.ARGB_8888, true);
+        bm = Bitmap.createScaledBitmap(think, canvasWidth/3, canvasHeight/3, true);
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(35);
+        Canvas canvas = new Canvas(bm);
+        canvas.drawText(text, bm.getWidth()/8, bm.getHeight()/2, paint);
+        //return new BitmapDrawable(bm);
+        return bm;
+    }
 
     public TakeCareView(Context context, TakeCare new_engineer)
     {
@@ -142,9 +157,8 @@ public class TakeCareView extends View
         socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
-        think = Bitmap.createScaledBitmap(think, canvasWidth/4, canvasHeight/3, true);
-        canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
-        canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
+        think = writeOnDrawable(R.drawable.think, engineer.getCurrentState());
+        canvas.drawBitmap(think, 2*canvasWidth/3 + 12,canvasHeight/7, null);
 
         if(count != 300)
         {

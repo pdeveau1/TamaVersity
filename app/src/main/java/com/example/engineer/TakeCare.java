@@ -121,7 +121,7 @@ public class TakeCare implements Serializable
         //if academics is greater than social by 15 will need to see friends
         else if(academics >= social + 15)
         {
-            currentState = "\nI miss my friends";
+            currentState = "I miss my friends";
         }
         //otherwise doing good
         else if(totalpoints != 0)
