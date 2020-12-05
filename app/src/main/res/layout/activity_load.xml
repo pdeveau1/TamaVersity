@@ -8,6 +8,7 @@
 
     <Button
         android:id="@+id/load_eng"
+        android:textSize="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:adjustViewBounds="false"
@@ -29,6 +30,7 @@
 
     <Button
         android:id="@+id/new_eng"
+        android:textSize="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableBottom="@drawable/laptop"
