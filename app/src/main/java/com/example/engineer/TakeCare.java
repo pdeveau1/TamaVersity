@@ -9,12 +9,10 @@ public class TakeCare implements Serializable
     //maximum one of the states can be
     private static int MAX_VAL = 100;
 
-    //sets all states initially to max the states can be
-    //test
     private float academics;
     private float health;
     private float social;
-    private float totalpoints;
+    private float totalPoints;
     private String name;
 
 
@@ -24,37 +22,46 @@ public class TakeCare implements Serializable
 
     public TakeCare()
     {
+        //initially set ALL states to 20%
         academics = 20;
         health = 20;
         social = 20;
-        totalpoints = 0;
+        //initially set total number of points to zero
+        totalPoints = 0;
+
+        //default name is Jimmy!
         name = "Jimmy";
+
+        //default string state is: Say hello to Jimmy
         currentState = "Say hello to " + name;
+
         pointCheck = false;
     }
 
+    //resets all data to previous collected data
     public TakeCare(float old_academics, float old_health, float old_social, String old_name)
     {
         academics = old_academics;
         health = old_health;
         social = old_social;
-        totalpoints = 0;
+        totalPoints = 0;
         name = old_name;
         currentState = "Say hello to " + name;
         pointCheck = false;
     }
 
+    //given string new_name, update name from Jimmy -> given
     public void setName(String new_name)
     {
         name = new_name;
         currentState = "Say hello to " + name;
     }
 
-    //drop book to engineer it studies
+    //user clicks book button -> academics
     public void study()
     {
         academics += 6;
-        totalpoints += 6;
+        totalPoints += 6;
         health -= 1;
         social -= 2;
 
@@ -72,24 +79,24 @@ public class TakeCare implements Serializable
         }
     }
 
-    //feed engineer it eats
+    //user clicks pizza -> health
     public void eat()
     {
         health += 3;
         academics -= 1;
-        totalpoints += 3;
+        totalPoints += 3;
         if(health >= MAX_VAL)
         {
             health = MAX_VAL;
         }
     }
 
-    //give engineer a friend it socializes
+    //user clicks friends -> social
     public void socialize()
     {
         social += 5;
         health += 2;
-        totalpoints += 7;
+        totalPoints += 7;
         academics -= 2;
 
         if (social >= MAX_VAL)
@@ -108,23 +115,44 @@ public class TakeCare implements Serializable
 
     public String getCurrentState()
     {
-        //if social is greater than academics by 10 will need to study
+        //if social is ahead of academics by 10, user will need to study
         if(social >= academics + 10)
         {
             currentState = "I should go study";
         }
-        //if academics is greater than health by 10 will need to eat
+
+        //if social is ahead of academics by 20, user will need to study - URGENT
+        if(social >= academics + 20)
+        {
+            currentState = "I should REALLY go study!";
+        }
+
+        //if academics is ahead of health by 10, user will need to eat
         else if(academics >= health + 10)
         {
             currentState = "I need to go eat";
         }
-        //if academics is greater than social by 15 will need to see friends
+
+        //if academics is ahead of health by 20, user will need to eat - URGENT
+        else if(academics >= health + 20)
+        {
+            currentState = "I REALLY need to go eat :/";
+        }
+
+        //if academics is ahead of social by 15, user will need to see friends
         else if(academics >= social + 15)
         {
             currentState = "I miss my friends";
         }
-        //otherwise doing good
-        else if(totalpoints != 0)
+
+        //if academics is ahead of social by 30, user will need to see friends - URGENT
+        else if(academics >= social + 15)
+        {
+            currentState = "I REALLY miss my friends :(";
+        }
+
+        //otherwise, assume user is doing good
+        else if(totalPoints != 0)
         {
             currentState = "Fine";
         }
@@ -133,7 +161,7 @@ public class TakeCare implements Serializable
 
     public boolean checkPoints()
     {
-        if (totalpoints >= 5)
+        if (totalPoints >= 5)
         {
             return true;
         }
