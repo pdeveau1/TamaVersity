@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -36,13 +37,16 @@ public class DateActivity extends AppCompatActivity {
             public void onClick(View v)
             {
                 tvw.setText("Selected Date: "+ picker.getDayOfMonth()+"-"+ (picker.getMonth() + 1)+"-"+picker.getYear());
-               // String dateString = $.datepicker.formatDate("dd-mm-yy", picker);
+                int day  = picker.getDayOfMonth();
+                int month= picker.getMonth();
+                int year = picker.getYear();
+                Calendar calendar = Calendar.getInstance();
+                calendar.set(year, month, day);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                String date = sdf.format(calendar.getTime());
                 String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
                 tvw.setText(currentDate);
-
-                //saves date semester ends
-                //date format:dd-MM-yyyy
-                String date = (picker.getMonth() + 1) +"-"+ picker.getDayOfMonth() +"-"+ picker.getYear();
                 tvw1.setText(date);
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
