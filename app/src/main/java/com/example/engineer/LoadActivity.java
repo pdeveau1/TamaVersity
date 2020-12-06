@@ -52,6 +52,8 @@ public class LoadActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                Animation bounceAnimation = AnimationUtils.loadAnimation(LoadActivity.this, R.anim.bounce_animation);
+                load_eng.startAnimation(bounceAnimation);
                 //gets the saved information
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 float academics = preferences.getFloat("lastAcademic",100);
@@ -87,6 +89,8 @@ public class LoadActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                Animation bounceAnimation = AnimationUtils.loadAnimation(LoadActivity.this, R.anim.bounce_animation);
+                new_eng.startAnimation(bounceAnimation);
                 //creates new TakeCare object for new engineer
                 TakeCare engineer = new TakeCare();
                 //creates new intent to go from LoadActivity to MainActivity
