@@ -27,12 +27,12 @@
         android:id="@+id/socializing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:text="Socializing"
-        android:textSize="40dp"
         android:textColor="@color/reportColor"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.378"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reportCard" />
 
@@ -41,14 +41,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Academics"
-        android:textSize="40dp"
         android:textColor="@color/reportColor"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/socializing"
-        app:layout_constraintVertical_bias="0.188" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/health"
@@ -56,24 +56,24 @@
         android:layout_height="wrap_content"
         android:text="Health"
         android:textColor="@color/reportColor"
-        android:textSize="40dp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/academics"
-        app:layout_constraintVertical_bias="0.269" />
+        app:layout_constraintVertical_bias="0.303" />
 
     <TextView
         android:id="@+id/socialGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="16dp"
         android:text="A+"
         android:textColor="@color/reportColor"
-        android:textSize="90dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.232"
         app:layout_constraintStart_toEndOf="@+id/socializing"
         app:layout_constraintTop_toBottomOf="@+id/reportCard" />
 
@@ -81,14 +81,14 @@
         android:id="@+id/academicGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="72dp"
         android:text="A+"
         android:textColor="@color/reportColor"
-        android:textSize="90dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.396"
+        app:layout_constraintHorizontal_bias="0.161"""""
         app:layout_constraintStart_toEndOf="@+id/academics"
-        app:layout_constraintTop_toBottomOf="@+id/socialGrade" />
+        app:layout_constraintTop_toBottomOf="@+id/socialGratools:layout_editor_absoluteY="319dp"de" />
 
     <TextView
         android:id="@+id/healthGrade"
@@ -97,11 +97,10 @@
         android:layout_marginTop="6dp"
         android:text="A+"
         android:textColor="@color/reportColor"
-        android:textSize="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize=aintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.741"
-        app:layout_constraintStart_toEndOf="@+id/health"
-        app:layout_constraintTop_toBottomOf="@+id/academicGrade"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart""0.45"       app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.232"
+        app:layout_constraintStart_toEndOf="@+id/socializing"
+        app:layout_constraintTop_toBottomOf="@+id/reportCard"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
