@@ -13,7 +13,7 @@
         android:id="@+id/reportCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Report_Card"
+        android:text="Report Card"
         android:textColor="@color/reportColor"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
