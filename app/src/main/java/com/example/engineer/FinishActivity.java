@@ -1,6 +1,7 @@
 package com.example.engineer;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.widget.TextView;
 
@@ -47,5 +48,13 @@ public class FinishActivity extends AppCompatActivity {
         socialGrade.setText(this.calcGrade(engineer.getSocial()));
         academicGrade.setText(this.calcGrade(engineer.getAcademic()));
         healthGrade.setText(this.calcGrade(engineer.getHealth()));
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        moveTaskToBack(true);
+        finish();
+        return false;
     }
 }
