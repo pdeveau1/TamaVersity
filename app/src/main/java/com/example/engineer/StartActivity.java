@@ -47,8 +47,8 @@ public class StartActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //creates new intent to go from StartActivity to LoadActivity
-                Intent intent = new Intent(StartActivity.this, LoadActivity.class);
+                //creates new intent to go from StartActivity to InstructionScreen
+                Intent intent = new Intent(StartActivity.this, InstructionScreen.class);
                 startActivity(intent);
                 finish();
             }

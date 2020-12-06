@@ -115,14 +115,26 @@ public class TakeCare implements Serializable
 
     public String getCurrentState()
     {
+        if(academics < 50)
+        {
+            currentState = "O no! My grades";
+        }
+        else if(health < 50)
+        {
+            currentState = "I'm starving!";
+        }
+        else if(social < 50)
+        {
+            currentState = "I'm sad!";
+        }
         //if social is ahead of academics by 20, user will need to study - URGENT
-        if(social >= academics + 20)
+        else if(social >= academics + 20)
         {
             currentState = "REALLY need to go study!";
         }
 
         //if social is ahead of academics by 10, user will need to study
-        if(social >= academics + 10)
+        else if(social >= academics + 10)
         {
             currentState = "I should go study";
         }
@@ -139,22 +151,22 @@ public class TakeCare implements Serializable
             currentState = "Need to go eat";
         }
 
-        //if academics is ahead of social by 15, user will need to see friends
-        else if(academics >= social + 15)
-        {
-            currentState = "Miss my friends";
-        }
-
         //if academics is ahead of social by 30, user will need to see friends - URGENT
         else if(academics >= social + 30)
         {
             currentState = "REALLY miss my friends";
         }
 
+        //if academics is ahead of social by 15, user will need to see friends
+        else if(academics >= social + 15)
+        {
+            currentState = "Miss my friends";
+        }
+
         //otherwise, assume user is doing good
         else if(totalPoints != 0)
         {
-            currentState = "\n\nI'm feel good";
+            currentState = "\n\nI'm feeling good";
         }
         return currentState;
     }

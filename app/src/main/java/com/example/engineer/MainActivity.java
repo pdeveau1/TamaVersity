@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
 
     private Handler handler = new Handler();
-    private final static long Interval = 10;
+    private final static long Interval = 30;
 
 
     private TakeCare engineer;

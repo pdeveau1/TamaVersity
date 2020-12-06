@@ -7,7 +7,6 @@
     tools:context=".InstructionScreen">
 
     <ImageView
-
         android:id="@+id/book"
         android:layout_width="41dp"
         android:layout_height="0dp"
@@ -20,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/book"
-        tools:layout_editor_absoluteY="66dp" />
+        tools:layout_editor_absoluteY="66dp"
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/friend"
@@ -51,14 +51,14 @@
         android:id="@+id/engineer"
         android:layout_width="209dp"
         android:layout_height="190dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
         android:layout_marginTop="350dp"
         android:layout_marginBottom="104dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/student" />
 
     <TextView
@@ -92,7 +92,8 @@
         android:text="Click on the books to study and increase your academic percentage"
         app:layout_constraintBottom_toTopOf="@+id/socialInstruct"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:layout_editor_absoluteX="69dp" />
+        tools:layout_editor_absoluteX="69dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/socialInstruct"
