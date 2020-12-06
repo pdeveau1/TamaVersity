@@ -1,3 +1,4 @@
+//activity to save the information of the engineer to the app
 package com.example.engineer;
 
 import android.content.Intent;

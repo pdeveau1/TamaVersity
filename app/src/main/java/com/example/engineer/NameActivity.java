@@ -1,3 +1,4 @@
+//This activity loads activity_name.xml and asks the user to submit the name of the engineer and will go to DateActivity so the user can enter the date
 package com.example.engineer;
 
 import android.content.Intent;
@@ -35,7 +36,10 @@ public class NameActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Animation bounceAnimation = AnimationUtils.loadAnimation(NameActivity.this, R.anim.bounce_animation);
                 submitButton.startAnimation(bounceAnimation);
+                //gets input
                 name = nameInput.getText().toString();
+
+                //saves input to name
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("Name",name);
@@ -43,16 +47,12 @@ public class NameActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
                 startActivity(intent);
                 finish();
-//                textView.setText("Say hello to: " + name);
-//                showToast("Say hello to: " + name);
-//                try {
-//                    sleep(5000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+
                 TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
                 engineer.setName(name);
+                //loads DateActivity
                 Intent dateIntent = new Intent(NameActivity.this, DateActivity.class);
+                //passes to DateActivity the engineer
                 dateIntent.putExtra("Engineer", engineer);
                 startActivity(dateIntent);
             }

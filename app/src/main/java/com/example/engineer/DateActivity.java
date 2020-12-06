@@ -1,3 +1,4 @@
+//This activity loads activity_date.xml and asks the user to submit the date for the end of the semester and will go to MainActivity so the user can play the game
 package com.example.engineer;
 
 import android.content.Intent;
@@ -35,21 +36,25 @@ public class DateActivity extends AppCompatActivity {
             {
                 Animation bounceAnimation = AnimationUtils.loadAnimation(DateActivity.this, R.anim.bounce_animation);
                 btnGet.startAnimation(bounceAnimation);
+                //gets information from date picker and formats it
                 int day  = picker.getDayOfMonth();
                 int month= picker.getMonth();
                 int year = picker.getYear();
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, day);
-
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(calendar.getTime());
+                //gets current date
                 String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+                //saves inputted date to app
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("Date",date);
                 editor.apply();
+                //checks if end date is same as current date
                 if(date.compareTo(currentDate) <= 0)
                 {
+                    //takes to finish activity to see report card
                     Intent finishIntent = new Intent(DateActivity.this, FinishActivity.class);
                     finishIntent.putExtra("Engineer", engineer);
                     startActivity(finishIntent);

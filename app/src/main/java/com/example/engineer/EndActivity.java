@@ -1,3 +1,4 @@
+//if user exits out of game takes to activity_end.xml to save engineer information and exit app
 package com.example.engineer;
 
 import android.content.Intent;
@@ -28,8 +29,10 @@ public class EndActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
+                //animations
                 Animation bounceAnimation = AnimationUtils.loadAnimation(EndActivity.this, R.anim.bounce_animation);
                 button.startAnimation(bounceAnimation);
+                //save data
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putFloat("lastAcademic",engineer.getAcademic());
@@ -40,6 +43,7 @@ public class EndActivity extends AppCompatActivity
                 Intent save = new Intent(getApplicationContext(), SaveEngineer.class);
                 startActivity(save);
                 finish();
+                //close app
                 moveTaskToBack(true);
                 finish();
             }

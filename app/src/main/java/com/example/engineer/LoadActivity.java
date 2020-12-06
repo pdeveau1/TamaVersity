@@ -63,19 +63,21 @@ public class LoadActivity extends AppCompatActivity
                 String date = preferences.getString("Date","3000-12-30");
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social, name);
-                //engineer.setName(preferences.getString("Name","Jimmy"));
 
                 //creates new intent to go from LoadActivity to MainActivity
                 String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
+                //check if current date is semester end date
                 if(date.compareTo(currentDate) <= 0)
                 {
+                    //take to finish screen
                     Intent reportIntent = new Intent(LoadActivity.this, FinishActivity.class);
                     reportIntent.putExtra("Engineer", engineer);
                     startActivity(reportIntent);
                     finish();
                 }
                 else {
+                    //take to main game
                     Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
                     //passes to mainActivity the engineer
                     mainIntent.putExtra("Engineer", engineer);
@@ -87,6 +89,7 @@ public class LoadActivity extends AppCompatActivity
             }
         });
 
+        //if user clicks to load new engineer
         new_eng.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -96,9 +99,9 @@ public class LoadActivity extends AppCompatActivity
                 new_eng.startAnimation(bounceAnimation);
                 //creates new TakeCare object for new engineer
                 TakeCare engineer = new TakeCare();
-                //creates new intent to go from LoadActivity to MainActivity
+                //creates new intent to go from LoadActivity to NameActivity
                 Intent nameIntent = new Intent(LoadActivity.this, NameActivity.class);
-                //passes to mainActivity the engineer
+                //passes to NameActivity the engineer
                 nameIntent.putExtra("Engineer", engineer);
                 //starts main activity
                 startActivity(nameIntent);
