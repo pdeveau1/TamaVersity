@@ -51,23 +51,26 @@ public class DateActivity extends AppCompatActivity {
                 String date = sdf.format(calendar.getTime());
                 String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
                 tvw.setText(currentDate);
-                tvw1.setText(date);
+                tvw1.setText(Boolean.toString(date.compareTo(currentDate) <= 0));
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("Date",date);
                 editor.apply();
-
-                Intent intent = new Intent(getApplicationContext(), SaveEngineer.class);
-                startActivity(intent);
-                finish();
-
-                //takes to main game
-                Intent mainIntent = new Intent(DateActivity.this, MainActivity.class);
-                //passes to mainActivity the engineer
-                mainIntent.putExtra("Engineer", engineer);
-                mainIntent.putExtra("Date", date);
-                //starts main activity
-                startActivity(mainIntent);
+                if(date.compareTo(currentDate) <= 0)
+                {
+                    Intent finishIntent = new Intent(DateActivity.this, FinishActivity.class);
+                    finishIntent.putExtra("Engineer", engineer);
+                    startActivity(finishIntent);
+                }
+                else {
+                     //takes to main game
+                    Intent mainIntent = new Intent(DateActivity.this, MainActivity.class);
+                    //passes to mainActivity the engineer
+                    mainIntent.putExtra("Engineer", engineer);
+                    mainIntent.putExtra("Date", date);
+                    //starts main activity
+                    startActivity(mainIntent);
+                }
             }
         });
     }

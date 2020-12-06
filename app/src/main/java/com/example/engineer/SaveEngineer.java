@@ -3,16 +3,14 @@ package com.example.engineer;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SaveEngineer extends AppCompatActivity
 {
 
     float lastAcademic, lastHealth, lastSocial;
+            String Date, Name;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -21,9 +19,11 @@ public class SaveEngineer extends AppCompatActivity
         setContentView(R.layout.activity_saveengineer);
 
         SharedPreferences preferences = getSharedPreferences("PREFS", 0);
-        lastAcademic = preferences.getFloat("lastAcademic",20);
-        lastHealth = preferences.getFloat("lastHealth",20);
-        lastSocial = preferences.getFloat("lastSocial",20);
+        lastAcademic = preferences.getFloat("lastAcademic",100);
+        lastHealth = preferences.getFloat("lastHealth",100);
+        lastSocial = preferences.getFloat("lastSocial",100);
+        Date = preferences.getString("Date","01-01-3000");
+        Name = preferences.getString("Name", "Jimmy");
     }
 
     @Override

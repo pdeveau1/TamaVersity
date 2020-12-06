@@ -1,6 +1,5 @@
 package com.example.engineer;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -8,9 +7,6 @@ import android.view.WindowManager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,25 +19,26 @@ public class MainActivity extends AppCompatActivity
     private final static long Interval = 30;
 
 
+    private TakeCare engineer;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
+        engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
-        String date = (String)getIntent().getSerializableExtra("Date");
-        String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
-
-        if(date.compareTo(currentDate) < 0)
-
-        {
-            Intent finishIntent = new Intent(MainActivity.this, FinishActivity.class);
-            startActivity(finishIntent);
-        }
-
-        //gameView = new TakeCareView(this, engineer);
+//        String date = (String)getIntent().getSerializableExtra("Date");
+//        String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
+//
+//        if(date.compareTo(currentDate) <= 0)
+//        {
+//            Intent finishIntent = new Intent(MainActivity.this, FinishActivity.class);
+//            finishIntent.putExtra("Engineer", engineer);
+//            startActivity(finishIntent);
+//        }
         gameView = new TakeCareView(this, engineer);
 
         setContentView(gameView);
@@ -62,8 +59,7 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
 
-            }
-        }, 0, Interval);
+            }}, 0, Interval);
     }
 }
 

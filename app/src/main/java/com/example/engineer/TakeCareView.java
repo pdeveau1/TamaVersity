@@ -9,6 +9,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -35,7 +36,6 @@ public class TakeCareView extends View
 
     private Bitmap backgroundImage;
 
-    //testing UI buttons
     private Bitmap studyButton;
     private Bitmap eatButton;
     private Bitmap socialButton;
@@ -49,6 +49,19 @@ public class TakeCareView extends View
     private TakeCare engineer;
 
     private int count;
+
+    public Bitmap writeOnDrawable(int drawableId, String text){
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), drawableId).copy(Bitmap.Config.ARGB_8888, true);
+        bm = Bitmap.createScaledBitmap(think, canvasWidth/3, canvasHeight/3, true);
+        Paint paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(35);
+        Canvas canvas = new Canvas(bm);
+        canvas.drawText(text, bm.getWidth()/8, bm.getHeight()/2, paint);
+        return bm;
+    }
+
 
     public TakeCareView(Context context, TakeCare new_engineer)
     {
@@ -94,7 +107,6 @@ public class TakeCareView extends View
 
         Paint paint = new Paint();
         paint.setColor(Color.BLACK);
-        //paint.style = Paint.Style.FILL;
         paint.setTypeface(Typeface.create(Typeface.DEFAULT, Typeface.BOLD));
         paint.setTextSize(50);
 
@@ -106,35 +118,41 @@ public class TakeCareView extends View
         canvasWidth = canvas.getWidth();
         canvasHeight = canvas.getHeight();
 
+        //draws background
         backgroundImage = Bitmap.createScaledBitmap(backgroundImage, canvasWidth, canvasHeight, true);
         canvas.drawBitmap(backgroundImage, 0, 0, null);
 
+        //draws player
         player = Bitmap.createScaledBitmap(player,canvasWidth, canvasHeight, true);
         canvas.drawBitmap(player, 0, canvasWidth/4, null);
 
+        //draws exit button
         x = Bitmap.createScaledBitmap(x,canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(x, canvasWidth - canvasWidth/10, canvasHeight - canvasHeight/10, null);
 
-        //button for studying
+        //draws button for studying
         studyButton = Bitmap.createScaledBitmap(studyButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(studyButton,  canvasWidth/15, canvasHeight - canvasHeight/9, null);
 
-        //button for health
+        //draws button for health
         eatButton = Bitmap.createScaledBitmap(eatButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(eatButton, canvasWidth/6, canvasHeight - canvasHeight/9, null);
 
-        //button for social
+        //draws button for social
         socialButton = Bitmap.createScaledBitmap(socialButton, canvasWidth/10, canvasHeight/10, true);
         canvas.drawBitmap(socialButton, canvasWidth/4, canvasHeight - canvasHeight/9, null);
 
+        //draws 3 progress bars: 1 for academics, 1 for health, and 1 for social
         canvas.drawBitmap(academic_view, canvasWidth - engineer.getAcademic()*10,0, null);
         canvas.drawBitmap(health_view, canvasWidth - engineer.getHealth()*10,70, null);
         canvas.drawBitmap(social_view, canvasWidth - engineer.getSocial()*10,140, null);
 
+        //draws 3 percentages, 1 for each bar
         canvas.drawText(String.valueOf((int)engineer.getAcademic()) + "%", canvasWidth - engineer.getAcademic()*10, academic_view.getHeight()/2, paint);
         canvas.drawText(String.valueOf((int)engineer.getHealth()) + "%", canvasWidth - engineer.getHealth()*10, health_view.getHeight()/2 + 70, paint);
         canvas.drawText(String.valueOf((int)engineer.getSocial()) + "%", canvasWidth - engineer.getSocial()*10, social_view.getHeight()/2 + 140, paint);
 
+        //draws additional small icons to 3 bars
         studyBar = Bitmap.createScaledBitmap(studyButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(studyBar, canvasWidth - engineer.getAcademic()*10 + 90,0, null);
         eatBar = Bitmap.createScaledBitmap(eatButton, canvasWidth/30, canvasHeight/40, true);
@@ -142,9 +160,9 @@ public class TakeCareView extends View
         socialBar = Bitmap.createScaledBitmap(socialButton, canvasWidth/30, canvasHeight/40, true);
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
-        think = Bitmap.createScaledBitmap(think, canvasWidth/6, canvasHeight/4, true);
-        canvas.drawBitmap(think, 2*canvasWidth/3 + 15,canvasHeight/5, null);
-        canvas.drawText(engineer.getCurrentState(), 2*canvasWidth/3, canvasHeight/3, paintEng);
+        //draws thinking bubble
+        think = writeOnDrawable(R.drawable.think, engineer.getCurrentState());
+        canvas.drawBitmap(think, 2*canvasWidth/3 + 12,canvasHeight/7, null);
 
         if(count != 300)
         {
