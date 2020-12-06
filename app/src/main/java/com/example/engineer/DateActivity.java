@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -36,6 +38,8 @@ public class DateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                Animation bounceAnimation = AnimationUtils.loadAnimation(DateActivity.this, R.anim.bounce_animation);
+                btnGet.startAnimation(bounceAnimation);
                 tvw.setText("Selected Date: "+ picker.getDayOfMonth()+"-"+ (picker.getMonth() + 1)+"-"+picker.getYear());
                 int day  = picker.getDayOfMonth();
                 int month= picker.getMonth();
