@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engineer">
+        <activity android:name=".InstructionScreen"></activity>
         <activity android:name=".NameActivity" />
         <activity android:name=".DateActivity" />
         <activity android:name=".LoadActivity" />
