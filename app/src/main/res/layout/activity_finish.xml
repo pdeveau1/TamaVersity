@@ -86,9 +86,9 @@
         android:textColor="@color/reportColor"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"""""
+        app:layout_constraintHorizontal_bias="0.161"
         app:layout_constraintStart_toEndOf="@+id/academics"
-        app:layout_constraintTop_toBottomOf="@+id/socialGratools:layout_editor_absoluteY="319dp"de" />
+        app:layout_constraintTop_toBottomOf="@+id/reportCard"/>
 
     <TextView
         android:id="@+id/healthGrade"
@@ -97,10 +97,10 @@
         android:layout_marginTop="6dp"
         android:text="A+"
         android:textColor="@color/reportColor"
-        android:textSize=aintBottom_toBottomOf="parent"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart""0.45"       app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.232"
-        app:layout_constraintStart_toEndOf="@+id/socializing"
-        app:layout_constraintTop_toBottomOf="@+id/reportCard"/>
+        app:layout_constraintHorizontal_bias="0.161"/>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
