@@ -12,99 +12,93 @@
         android:id="@+id/reportCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="196dp"
         android:text="Report Card"
         android:textColor="@color/reportColor"
         android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/socializing"
-        app:layout_constraintStart_toStartOf="@+id/socializing"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/socializing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
+        android:layout_marginTop="72dp"
         android:text="Socializing"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/socialGrade"
         app:layout_constraintEnd_toStartOf="@+id/socialGrade"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reportCard" />
 
     <TextView
         android:id="@+id/academics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
+        android:layout_marginTop="20dp"
         android:text="Academics"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/academicGrade"
-        app:layout_constraintEnd_toStartOf="@+id/academicGrade"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/socializing"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/socializing"
+        app:layout_constraintTop_toBottomOf="@+id/socializing" />
 
     <TextView
         android:id="@+id/health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="64dp"
-        android:layout_marginRight="64dp"
+        android:layout_marginTop="16dp"
         android:text="Health"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/healthGrade"
-        app:layout_constraintEnd_toStartOf="@+id/healthGrade"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/academics"
+        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintStart_toStartOf="@+id/academics"
+        app:layout_constraintTop_toBottomOf="@+id/academics" />
 
     <TextView
         android:id="@+id/socialGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="26dp"
-        android:layout_marginRight="26dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
         android:text="A+"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/academicGrade"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/socializing"
         app:layout_constraintTop_toBottomOf="@+id/reportCard" />
 
     <TextView
         android:id="@+id/academicGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="115dp"
-        android:layout_marginEnd="17dp"
-        android:layout_marginRight="17dp"
-        android:layout_marginBottom="115dp"
+        android:layout_marginTop="20dp"
         android:text="A+"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/healthGrade"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/academics"
-        app:layout_constraintTop_toTopOf="@+id/socializing" />
+        app:layout_constraintEnd_toEndOf="@+id/socialGrade"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/socialGrade"
+        app:layout_constraintTop_toBottomOf="@+id/socialGrade" />
 
     <TextView
         android:id="@+id/healthGrade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="182dp"
+        android:layout_marginTop="15dp"
         android:text="A+"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/academicGrade"
-        app:layout_constraintStart_toStartOf="@+id/academicGrade" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/academicGrade"
+        app:layout_constraintTop_toBottomOf="@+id/academicGrade"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
