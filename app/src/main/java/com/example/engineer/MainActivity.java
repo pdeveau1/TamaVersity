@@ -1,3 +1,4 @@
+//activity to run main game with view from TakeCareView
 package com.example.engineer;
 
 import android.os.Bundle;
@@ -30,20 +31,9 @@ public class MainActivity extends AppCompatActivity
 
         engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
-//        String date = (String)getIntent().getSerializableExtra("Date");
-//        String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
-//
-//        if(date.compareTo(currentDate) <= 0)
-//        {
-//            Intent finishIntent = new Intent(MainActivity.this, FinishActivity.class);
-//            finishIntent.putExtra("Engineer", engineer);
-//            startActivity(finishIntent);
-//        }
         gameView = new TakeCareView(this, engineer);
 
         setContentView(gameView);
-
-
 
         //creates interval to continuously update the screen view
         Timer timer = new Timer();

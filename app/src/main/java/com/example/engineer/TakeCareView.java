@@ -1,3 +1,4 @@
+//class that creates the view for the mainActivity with graphics to play the game
 package com.example.engineer;
 
 import android.content.Context;
@@ -173,16 +174,6 @@ public class TakeCareView extends View
         }
     }
 
-   /* @Override
-    public boolean onTouchEvent(MotionEvent event)
-    {
-        if(event.getAction() == MotionEvent.ACTION_DOWN)
-        {
-            engineer.study();
-        }
-        return true;
-    }*/
-   // delegate the event to the gesture detector
    @Override
    public boolean onTouchEvent(MotionEvent e)
    {
@@ -197,7 +188,7 @@ public class TakeCareView extends View
         {
             return true;
         }
-        //event when single tap occurs, engineers studies
+
         @Override
         public boolean onSingleTapConfirmed(MotionEvent e)
         {
@@ -227,19 +218,6 @@ public class TakeCareView extends View
             }
             return true;
         }
-        /*
-        // event when double tap occurs, engineer socializes
-        @Override
-        public boolean onDoubleTapEvent(MotionEvent e)
-        {
-            engineer.socialize();
-            return true;
-        }
-        // event when long tap occurs, engineer eats
-        public void onLongPress(MotionEvent e)
-        {
-            engineer.eat();
-        }*/
     }
 }
 

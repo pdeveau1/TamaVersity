@@ -1,3 +1,4 @@
+//Activity that first loads displaying activity_start.xml with a logo and title of app then goes to InstructionScreen
 package com.example.engineer;
 
 import android.content.Intent;

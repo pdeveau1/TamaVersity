@@ -1,3 +1,4 @@
+//When the semester ends loads activity_finish.xml and displays grades for academics, social, and health
 package com.example.engineer;
 
 import android.os.Bundle;
@@ -13,6 +14,7 @@ public class FinishActivity extends AppCompatActivity {
     TextView academicGrade;
     TextView healthGrade;
 
+    //grade distribution
     String calcGrade(float grade)
     {
         int score = (int)grade;
@@ -45,11 +47,13 @@ public class FinishActivity extends AppCompatActivity {
         academicGrade = (TextView) findViewById(R.id.academicGrade);
         healthGrade = (TextView) findViewById(R.id.healthGrade);
 
+        //set grade values for textView
         socialGrade.setText(this.calcGrade(engineer.getSocial()));
         academicGrade.setText(this.calcGrade(engineer.getAcademic()));
         healthGrade.setText(this.calcGrade(engineer.getHealth()));
     }
 
+    //when screen clicked close app
     @Override
     public boolean onTouchEvent(MotionEvent event)
     {

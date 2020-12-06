@@ -1,3 +1,4 @@
+//after logo appears instructions are displayed in activity_instruction_screen.xml
 package com.example.engineer;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ public class InstructionScreen extends AppCompatActivity{
         setContentView(R.layout.activity_instruction_screen);
 
     }
+    //when screen tapped take to load screen
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Intent loadIntent = new Intent(InstructionScreen.this, LoadActivity.class);
