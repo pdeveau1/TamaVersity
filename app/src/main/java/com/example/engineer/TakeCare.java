@@ -146,7 +146,7 @@ public class TakeCare implements Serializable
         }
 
         //if academics is ahead of social by 30, user will need to see friends - URGENT
-        else if(academics >= social + 15)
+        else if(academics >= social + 30)
         {
             currentState = "REALLY miss my friends";
         }
@@ -154,7 +154,7 @@ public class TakeCare implements Serializable
         //otherwise, assume user is doing good
         else if(totalPoints != 0)
         {
-            currentState = "\n\nI feel good";
+            currentState = "\n\nI'm feel good";
         }
         return currentState;
     }
