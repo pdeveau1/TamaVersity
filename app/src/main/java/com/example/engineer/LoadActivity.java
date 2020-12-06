@@ -1,7 +1,6 @@
 //class for activity when prompting the user to load an old engineer or create a new one
 package com.example.engineer;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -61,7 +60,7 @@ public class LoadActivity extends AppCompatActivity
                 float health = preferences.getFloat("lastHealth",100);
                 float social = preferences.getFloat("lastSocial",100);
                 String name = preferences.getString("Name","Jimmy");
-                String date = preferences.getString("Date","3000-01-01");
+                String date = preferences.getString("Date","3000-12-30");
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social, name);
                 //engineer.setName(preferences.getString("Name","Jimmy"));
