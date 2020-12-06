@@ -63,6 +63,7 @@ public class LoadActivity extends AppCompatActivity
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social, name);
                 //engineer.setName(preferences.getString("Name","Jimmy"));
+
                 //creates new intent to go from LoadActivity to MainActivity
                 String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
