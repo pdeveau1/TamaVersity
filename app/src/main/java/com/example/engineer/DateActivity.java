@@ -47,9 +47,9 @@ public class DateActivity extends AppCompatActivity {
                 Calendar calendar = Calendar.getInstance();
                 calendar.set(year, month, day);
 
-                SimpleDateFormat sdf = new SimpleDateFormat("MM-dd-yyyy");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(calendar.getTime());
-                String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
+                String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
                 tvw.setText(currentDate);
                 tvw1.setText(Boolean.toString(date.compareTo(currentDate) <= 0));
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);

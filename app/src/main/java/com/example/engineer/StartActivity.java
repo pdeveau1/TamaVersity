@@ -55,3 +55,4 @@ public class StartActivity extends AppCompatActivity {
         }, SPLASH_TIME_OUT);
     }
 }
+

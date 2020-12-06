@@ -1,6 +1,7 @@
 //class for activity when prompting the user to load an old engineer or create a new one
 package com.example.engineer;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -60,18 +61,19 @@ public class LoadActivity extends AppCompatActivity
                 float health = preferences.getFloat("lastHealth",100);
                 float social = preferences.getFloat("lastSocial",100);
                 String name = preferences.getString("Name","Jimmy");
-                String date = preferences.getString("Date","01-01-3000");
+                String date = preferences.getString("Date","3000-01-01");
                 //creates new TakeCare object with saved data
                 TakeCare engineer = new TakeCare(academics, health, social, name);
                 //engineer.setName(preferences.getString("Name","Jimmy"));
                 //creates new intent to go from LoadActivity to MainActivity
-                String currentDate = new SimpleDateFormat("MM-dd-yyyy", Locale.getDefault()).format(new Date());
+                String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
 
                 if(date.compareTo(currentDate) <= 0)
                 {
-                    Intent finishIntent = new Intent(LoadActivity.this, FinishActivity.class);
-                    finishIntent.putExtra("Engineer", engineer);
-                    startActivity(finishIntent);
+                    Intent reportIntent = new Intent(LoadActivity.this, FinishActivity.class);
+                    reportIntent.putExtra("Engineer", engineer);
+                    startActivity(reportIntent);
+                    finish();
                 }
                 else {
                     Intent mainIntent = new Intent(LoadActivity.this, MainActivity.class);
@@ -80,6 +82,7 @@ public class LoadActivity extends AppCompatActivity
                     mainIntent.putExtra("Date", date);
                     //starts main activity
                     startActivity(mainIntent);
+                    finish();
                 }
             }
         });
