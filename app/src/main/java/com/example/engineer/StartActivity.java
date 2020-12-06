@@ -48,7 +48,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //creates new intent to go from StartActivity to LoadActivity
-                Intent intent = new Intent(StartActivity.this, LoadActivity.class);
+                Intent intent = new Intent(StartActivity.this, InstructionScreen.class);
                 startActivity(intent);
                 finish();
             }

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InstructionScreen">
+    android:onClick="screenTapped">
 
     <ImageView
         android:id="@+id/food"
@@ -12,21 +13,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
+        android:layout_marginEnd="315dp"
+        android:layout_marginRight="315dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/friend"
-        app:layout_constraintVertical_bias="0.137"
+        app:layout_constraintVertical_bias="0.098"
         app:srcCompat="@drawable/food" />
 
     <ImageView
         android:id="@+id/friend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/book"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/social" />
 
     <ImageView
