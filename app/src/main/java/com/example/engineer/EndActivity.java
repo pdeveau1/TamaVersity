@@ -40,6 +40,8 @@ public class EndActivity extends AppCompatActivity
                 Intent save = new Intent(getApplicationContext(), SaveEngineer.class);
                 startActivity(save);
                 finish();
+                moveTaskToBack(true);
+                finish();
             }
         });
     }
