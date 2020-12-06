@@ -9,13 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Engineer">
-        <activity android:name=".NameActivity"></activity>
-        <!-- <activity android:name=".StartActivity"></activity> -->
+        <activity android:name=".NameActivity" />
         <activity android:name=".DateActivity" />
         <activity android:name=".LoadActivity" />
         <activity android:name=".EndActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".FinishActivity" />
+        <activity android:name=".SaveEngineer" />
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SaveEngineer" />
     </application>
 
 </manifest>
