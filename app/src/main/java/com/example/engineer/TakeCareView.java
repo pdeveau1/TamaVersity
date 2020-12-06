@@ -2,14 +2,12 @@ package com.example.engineer;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -45,7 +43,7 @@ public class TakeCareView extends View
     private Bitmap socialBar;
 
     private Bitmap think;
-
+    private Bitmap write_think;
     private TakeCare engineer;
 
     private int count;
@@ -161,8 +159,8 @@ public class TakeCareView extends View
         canvas.drawBitmap(socialBar, canvasWidth - engineer.getSocial()*10 + 90,academic_view.getHeight() + health_view.getHeight(), null);
 
         //draws thinking bubble
-        think = writeOnDrawable(R.drawable.think, engineer.getCurrentState());
-        canvas.drawBitmap(think, 2*canvasWidth/3 + 12,canvasHeight/7, null);
+        write_think = writeOnDrawable(R.drawable.think, engineer.getCurrentState());
+        canvas.drawBitmap(write_think, 2*canvasWidth/3 + 12,canvasHeight/7, null);
 
         if(count != 300)
         {
