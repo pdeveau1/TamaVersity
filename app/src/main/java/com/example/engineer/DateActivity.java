@@ -8,7 +8,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,8 +19,6 @@ import java.util.Locale;
 public class DateActivity extends AppCompatActivity {
     DatePicker picker;
     Button btnGet;
-    TextView tvw;
-    TextView tvw1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +26,6 @@ public class DateActivity extends AppCompatActivity {
         setContentView(R.layout.activity_date);
         TakeCare engineer = (TakeCare)getIntent().getSerializableExtra("Engineer");
 
-        tvw=(TextView)findViewById(R.id.tvDate);
-        tvw1=(TextView)findViewById(R.id.tvDate1);
         picker=(DatePicker)findViewById(R.id.datePicker1);
         btnGet=(Button)findViewById(R.id.button1);
         btnGet.setOnClickListener(new View.OnClickListener()
@@ -40,7 +35,6 @@ public class DateActivity extends AppCompatActivity {
             {
                 Animation bounceAnimation = AnimationUtils.loadAnimation(DateActivity.this, R.anim.bounce_animation);
                 btnGet.startAnimation(bounceAnimation);
-                tvw.setText("Selected Date: "+ picker.getDayOfMonth()+"-"+ (picker.getMonth() + 1)+"-"+picker.getYear());
                 int day  = picker.getDayOfMonth();
                 int month= picker.getMonth();
                 int year = picker.getYear();
@@ -50,8 +44,6 @@ public class DateActivity extends AppCompatActivity {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String date = sdf.format(calendar.getTime());
                 String currentDate = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-                tvw.setText(currentDate);
-                tvw1.setText(Boolean.toString(date.compareTo(currentDate) <= 0));
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("Date",date);
