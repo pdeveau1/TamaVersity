@@ -46,7 +46,7 @@ public class TakeCare implements Serializable
         social = old_social;
         totalPoints = 0;
         name = old_name;
-        currentState = "Say hello to " + name;
+        currentState = "  I am  " + name;
         pointCheck = false;
     }
 

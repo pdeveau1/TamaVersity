@@ -2,7 +2,7 @@
 
 ##Group Name: Androidal Yetis
 
-## Appication Name: TamaVersity
+## Application Name: TamaVersity
 
 ## Purpose
 Provide a fun experience in order to help students balance school and life based on academics, social life, and health
