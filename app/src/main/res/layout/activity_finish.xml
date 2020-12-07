@@ -29,13 +29,13 @@
         android:layout_marginRight="49dp"
         android:text="Report Card"
         android:textColor="@color/reportColor"
-        android:textSize="40dp"
+        android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/clipboard"
         app:layout_constraintEnd_toEndOf="@+id/clipboard"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toStartOf="@+id/clipboard"
         app:layout_constraintTop_toTopOf="@+id/clipboard"
-        app:layout_constraintVertical_bias="0.372" />
+        app:layout_constraintVertical_bias="0.336" />
 
     <TextView
         android:id="@+id/socializing"
@@ -48,7 +48,7 @@
         android:textColor="@color/reportColor"
         android:textSize="30dp"
         app:layout_constraintEnd_toStartOf="@+id/socialGrade"
-        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/clipboard"
         app:layout_constraintTop_toBottomOf="@+id/reportCard" />
 
@@ -56,12 +56,12 @@
         android:id="@+id/academics"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         android:text="Academics"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/socializing"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/socializing"
         app:layout_constraintTop_toBottomOf="@+id/socializing" />
 
@@ -69,12 +69,12 @@
         android:id="@+id/health"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:text="Health"
         android:textColor="@color/reportColor"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/academics"
-        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintHorizontal_bias="0.322"
         app:layout_constraintStart_toStartOf="@+id/academics"
         app:layout_constraintTop_toBottomOf="@+id/academics" />
 
