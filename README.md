@@ -31,6 +31,9 @@ At the end of the semester you will receive a report card with how well you did 
 ## Ending the game:
 To end the game for the day click the x in the bottom right corner and click the button to save your data
 
+## How to Run:
+To run this program, download the zip(AndroidalYetis_Source.zip). If zipped file make sure to unzip it. Then open Android Studio and open existing project. Finally make sure all of the files have loaded and hit run to have a fun time managing your busy life!
+
 ## Creators:
 - Paige DeVeau
 - Lesly Alcantara
