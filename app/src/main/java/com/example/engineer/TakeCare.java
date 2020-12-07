@@ -61,7 +61,6 @@ public class TakeCare implements Serializable
     public void study()
     {
         academics += 6;
-        totalPoints += 6;
         health -= 1;
         social -= 2;
 
@@ -84,7 +83,6 @@ public class TakeCare implements Serializable
     {
         health += 3;
         academics -= 1;
-        totalPoints += 3;
         if(health >= MAX_VAL)
         {
             health = MAX_VAL;
@@ -96,7 +94,6 @@ public class TakeCare implements Serializable
     {
         social += 5;
         health += 2;
-        totalPoints += 7;
         academics -= 2;
 
         if (social >= MAX_VAL)
