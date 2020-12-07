@@ -14,16 +14,16 @@ This game is based off of tamagotchi, but with a twist. You will be given an eng
 
 ## Starting the game:
 At the beginning of the game you will either be asked to load an engineer or create a new one
--loading an engineer will load the saved data from the last time you checked up on your engineer or load default values if an engineer has not been saved
--creating a new engineer will ask you to name your engineer and select the date for the end of your semester, starting off all percentages at 100
+- loading an engineer will load the saved data from the last time you checked up on your engineer or load default values if an engineer has not been saved
+- creating a new engineer will ask you to name your engineer and select the date for the end of your semester, starting off all percentages at 100
 
 ## How to Play:
--click on the book image to make your engineer study and increase its academic percentage, but be careful it will decrease your social and health percentages
--click on the friends image to make your engineer socialize and increase its social percentage, but be careful it will decrease your academic percentage
--click on the pizza image to make your engineer eat and increase its health percentage, but be careful it will decrease your academic percentage
-Overtime all of your percentages will decrease, so you want to make sure that you take care of your engineer finding a balance between academics, social life, and health
-Your engineer will notify you with what it needs at the time based in its percentages
-At the end of the semester you will receive a report card with how well you did in each area of your engineer's life
+- click on the book image to make your engineer study and increase its academic percentage, but be careful it will decrease your social and health percentages
+- click on the friends image to make your engineer socialize and increase its social percentage, but be careful it will decrease your academic percentage
+- click on the pizza image to make your engineer eat and increase its health percentage, but be careful it will decrease your academic percentage
+<\n>Overtime all of your percentages will decrease, so you want to make sure that you take care of your engineer finding a balance between academics, social life, and health
+<\n>Your engineer will notify you with what it needs at the time based in its percentages
+<\n>At the end of the semester you will receive a report card with how well you did in each area of your engineer's life
 
 ## Ending the game:
 To end the game for the day click the x in the bottom right corner and click the button to save your data
